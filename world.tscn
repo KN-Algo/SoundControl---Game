@@ -23,3 +23,5 @@ script = ExtResource("2_6vyot")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_feo6n")]
 position = Vector2(40, 80)
+
+[node name="Node2D" type="Node2D" parent="."]
