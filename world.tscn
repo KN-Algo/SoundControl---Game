@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://dccj8srylfk0h"]
+
+[ext_resource type="Script" path="res://world.gd" id="1_3508x"]
+[ext_resource type="Script" path="res://copty_texture.gd" id="2_6vyot"]
+[ext_resource type="PackedScene" uid="uid://dep84ljo21h76" path="res://player.tscn" id="2_feo6n"]
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_3508x")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(0, 0, 0, 13.9527, 0, 192, 320, 192, 320, 0, 296, 0, 296, 128, 264, 128, 240, 152, 208, 152, 184, 128, 184, 104, 160, 88, 160, 104, 160, 144, 128, 144, 80, 128, 40, 128, 40, 104, 24, 104, 24, 0)
+script = ExtResource("2_6vyot")
+
+[node name="Polygon2Da" type="Polygon2D" parent="StaticBody2D/CollisionPolygon2D"]
+
+[node name="platforma" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(208, 48, 208, 64, 256, 64, 256, 48)
+script = ExtResource("2_6vyot")
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D/platforma"]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_feo6n")]
+position = Vector2(40, 80)
