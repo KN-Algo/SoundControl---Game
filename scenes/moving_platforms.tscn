@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://cxa53314dxov"]
 
-[ext_resource type="Script" path="res://scripts/moving_platforms_controll.gd" id="1_r0qg1"]
+[ext_resource type="Script" path="res://Scripts/moving_platforms_controll.gd" id="1_r0qg1"]
 [ext_resource type="Texture2D" uid="uid://f6eff2nx32hq" path="res://Assets/plums.png" id="2_ktvip"]
 
 
