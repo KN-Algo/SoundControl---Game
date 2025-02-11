@@ -6,6 +6,12 @@ const SPEED = 150.0
 const JUMP_VELOCITY = -300.0
 @onready var sprite_2d: Sprite2D = $Sprite2D
 
+func _ready():
+	MenegerNawigacji.on_trigger_player_spawn.connect(_on_spawn)
+	
+func _on_spawn(pozycja: Vector2):
+	global_position = pozycja
+
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.

@@ -286,12 +286,12 @@ rendering_quadrant_size = 32
 position = Vector2(346, 79)
 curve = SubResource("Curve2D_cm0dg")
 
-[node name="Area2D" parent="." instance=ExtResource("5_u262u")]
-position = Vector2(360, 144)
+[node name="Wyjscie" parent="." instance=ExtResource("5_u262u")]
+position = Vector2(360, 152)
 destination_level_tag = "etap_1"
-destination_door_tag = "wejscie"
+destination_door_tag = "Wejscie"
 
-[node name="Marker2D" parent="Area2D" index="0"]
-position = Vector2(-31, -2)
+[node name="Spawn" parent="Wyjscie" index="0"]
+position = Vector2(-24, 0)
 
-[editable path="Area2D"]
+[editable path="Wyjscie"]

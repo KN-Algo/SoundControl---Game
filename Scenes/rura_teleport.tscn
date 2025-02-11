@@ -9,7 +9,7 @@ size = Vector2(13, 28)
 [node name="Area2D" type="Area2D"]
 script = ExtResource("1_86kcf")
 
-[node name="Marker2D" type="Marker2D" parent="."]
+[node name="Spawn" type="Marker2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_noedp")
