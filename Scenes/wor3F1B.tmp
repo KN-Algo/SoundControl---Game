@@ -287,26 +287,18 @@ curve = SubResource("Curve2D_cm0dg")
 
 [node name="Wyjscie" parent="." instance=ExtResource("5_u262u")]
 position = Vector2(360, 152)
-teleport = true
 destination_level_tag = "etap_1"
 destination_door_tag = "Wejscie"
 
 [node name="Spawn" parent="Wyjscie" index="0"]
 position = Vector2(-24, 0)
 
-[node name="Wejscie" parent="." instance=ExtResource("5_u262u")]
-position = Vector2(40, 144)
-
-[node name="Sprite2D" parent="Wejscie" index="1"]
-visible = false
-
 [node name="KillingZone" parent="." instance=ExtResource("6_6r0lh")]
 
 [node name="Area2D" parent="KillingZone" index="0"]
-position = Vector2(368, 40)
+position = Vector2(376, 40)
 destination_level_tag = "world"
-destination_door_tag = "Wejscie"
+destination_door_tag = "Wyjscie"
 
 [editable path="Wyjscie"]
-[editable path="Wejscie"]
 [editable path="KillingZone"]

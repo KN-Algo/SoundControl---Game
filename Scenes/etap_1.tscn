@@ -57,6 +57,7 @@ layer_0/tile_data = PackedInt32Array(327680, 0, 0, 327681, 0, 0, 327682, 0, 0, 3
 [node name="Wejscie" parent="." instance=ExtResource("2_fk0xu")]
 position = Vector2(16, 144)
 scale = Vector2(-1, 1)
+teleport = true
 destination_level_tag = "world"
 destination_door_tag = "Wyjscie"
 
