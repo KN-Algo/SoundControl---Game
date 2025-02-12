@@ -273,9 +273,10 @@ position = Vector2(52, 87)
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_c77e5")
 rendering_quadrant_size = 32
+collision_visibility_mode = 1
 format = 2
 
-[node name="map" type="TileMapLayer" parent="TileMap"]
+[node name="map" type="TileMapLayer" parent="."]
 use_parent_material = true
 tile_map_data = PackedByteArray("AAAAAAAAAQACAAIAAAAAAAEAAQABAAIAAAAAAAIAAQABAAMAAAAAAAMAAQABAAMAAAAAAAQAAQABAAMAAAAAAAUAAQACAAMAAAABAAUAAQACAAEAAAACAAUAAQADAAEAAAADAAUAAQADAAEAAAAEAAUAAQADAAMAAAAEAAQAAQABAAMAAAAEAAMAAQACAAIAAAAFAAMAAQACAAEAAAAGAAMAAQACAAEAAAAHAAMAAQADAAIAAAAHAAQAAQAEAAMAAAAHAAUAAQACAAMAAAAIAAUAAQACAAEAAAAJAAUAAQADAAEAAAAKAAUAAQADAAEAAAALAAUAAQADAAEAAAAMAAUAAQADAAMAAAAMAAQAAQABAAQAAAAMAAMAAQABAAMAAAAMAAIAAQABAAMAAAAMAAEAAQABAAMAAAAMAAAAAQADAAIAAAABAAAAAQAEAAIAAAALAAAAAQAEAAIAAAA=")
 tile_set = SubResource("TileSet_c77e5")
@@ -286,7 +287,7 @@ position = Vector2(346, 79)
 curve = SubResource("Curve2D_cm0dg")
 
 [node name="Wyjscie" parent="." instance=ExtResource("5_u262u")]
-position = Vector2(360, 152)
+position = Vector2(368, 152)
 teleport = true
 destination_level_tag = "etap_1"
 destination_door_tag = "Wejscie"
@@ -294,15 +295,10 @@ destination_door_tag = "Wejscie"
 [node name="Spawn" parent="Wyjscie" index="0"]
 position = Vector2(-24, 0)
 
-[node name="Sprite2D" parent="Wyjscie" index="1"]
-texture = null
-
 [node name="Wejscie" parent="." instance=ExtResource("5_u262u")]
-position = Vector2(40, 144)
-
-[node name="Sprite2D" parent="Wejscie" index="1"]
 visible = false
-texture = null
+position = Vector2(64, 152)
+scale = Vector2(-1, 1)
 
 [node name="KillingZone" parent="." instance=ExtResource("6_6r0lh")]
 
