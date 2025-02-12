@@ -269,8 +269,6 @@ script = ExtResource("1_3508x")
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_feo6n")]
 position = Vector2(52, 87)
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
-
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_c77e5")
 rendering_quadrant_size = 32

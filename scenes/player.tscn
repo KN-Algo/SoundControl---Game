@@ -6,6 +6,10 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_ne1pj"]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+floor_constant_speed = true
+floor_max_angle = 0.872665
+floor_snap_length = 5.0
+platform_on_leave = 2
 script = ExtResource("1_j5t1g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -15,3 +19,5 @@ shape = SubResource("CircleShape2D_ne1pj")
 scale = Vector2(0.65, 0.65)
 texture = ExtResource("2_r57do")
 offset = Vector2(-0.25, 16)
+
+[node name="Camera2D" type="Camera2D" parent="."]
