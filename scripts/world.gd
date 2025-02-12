@@ -8,6 +8,5 @@ func  _ready() -> void:
 		
 func _on_level_spawn(destination_tag: String):
 	var door = get_node(destination_tag) as Door
-	print(door)
 	MenegerNawigacji.trigger_player_spawn(door.spawn.global_position)
  
