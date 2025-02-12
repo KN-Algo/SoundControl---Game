@@ -294,11 +294,15 @@ destination_door_tag = "Wejscie"
 [node name="Spawn" parent="Wyjscie" index="0"]
 position = Vector2(-24, 0)
 
+[node name="Sprite2D" parent="Wyjscie" index="1"]
+texture = null
+
 [node name="Wejscie" parent="." instance=ExtResource("5_u262u")]
 position = Vector2(40, 144)
 
 [node name="Sprite2D" parent="Wejscie" index="1"]
 visible = false
+texture = null
 
 [node name="KillingZone" parent="." instance=ExtResource("6_6r0lh")]
 

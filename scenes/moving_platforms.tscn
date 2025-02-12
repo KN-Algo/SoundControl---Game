@@ -3,9 +3,23 @@
 [ext_resource type="Script" path="res://Scripts/moving_platforms_controll.gd" id="1_r0qg1"]
 [ext_resource type="Texture2D" uid="uid://f6eff2nx32hq" path="res://Assets/plums.png" id="2_ktvip"]
 
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8fr8f"]
 size = Vector2(34, 12)
+
+[sub_resource type="Animation" id="Animation_p0hph"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
 
 [sub_resource type="Animation" id="Animation_g1ek8"]
 resource_name = "move"
@@ -22,21 +36,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(-1.5, 1),
 "update": 0,
 "values": [0.0, 1.0]
-}
-
-[sub_resource type="Animation" id="Animation_p0hph"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("PathFollow2D:progress_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [1.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cs7n4"]
