@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=4 uid="uid://dccj8srylfk0h"]
+[gd_scene load_steps=9 format=4 uid="uid://dccj8srylfk0h"]
 
-[ext_resource type="Script" path="res://scripts/world.gd" id="1_3508x"]
+[ext_resource type="Script" path="res://Scripts/world.gd" id="1_3508x"]
 [ext_resource type="PackedScene" uid="uid://dep84ljo21h76" path="res://Scenes/player.tscn" id="2_feo6n"]
 [ext_resource type="Texture2D" uid="uid://f6eff2nx32hq" path="res://Assets/plums.png" id="3_o5kx0"]
 [ext_resource type="PackedScene" uid="uid://cxa53314dxov" path="res://Scenes/moving_platforms.tscn" id="4_rifsp"]
+[ext_resource type="PackedScene" uid="uid://dkyqtr7vapeok" path="res://Scenes/rura_teleport.tscn" id="5_u262u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i8enc"]
 texture = ExtResource("3_o5kx0")
@@ -268,8 +269,6 @@ script = ExtResource("1_3508x")
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_feo6n")]
 position = Vector2(52, 87)
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
-
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_c77e5")
 rendering_quadrant_size = 32
@@ -284,3 +283,13 @@ rendering_quadrant_size = 32
 [node name="Path2D" parent="." instance=ExtResource("4_rifsp")]
 position = Vector2(346, 79)
 curve = SubResource("Curve2D_cm0dg")
+
+[node name="Wyjscie" parent="." instance=ExtResource("5_u262u")]
+position = Vector2(360, 152)
+destination_level_tag = "etap_1"
+destination_door_tag = "Wejscie"
+
+[node name="Spawn" parent="Wyjscie" index="0"]
+position = Vector2(-24, 0)
+
+[editable path="Wyjscie"]

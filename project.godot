@@ -11,9 +11,14 @@ config_version=5
 [application]
 
 config/name="platform tutorial"
-run/main_scene="res://scenes/world.tscn"
+run/main_scene="res://Scenes/world.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
-config/icon="res://Assets/icon.svg"
+config/icon="res://Assets/sp_player.png"
+
+[autoload]
+
+MenegerNawigacji="*res://Scripts/Global/meneger_nawigacji.gd"
+ZmianaSceny="*res://Scenes/zmiana_sceny.tscn"
 
 [display]
 
