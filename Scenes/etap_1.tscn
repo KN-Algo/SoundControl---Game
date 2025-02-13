@@ -68,6 +68,6 @@ position = Vector2(-24, 0)
 texture = null
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("3_b03s8")]
-position = Vector2(104, 120)
+position = Vector2(110, 120)
 
 [editable path="Wejscie"]
