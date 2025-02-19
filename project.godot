@@ -19,6 +19,7 @@ config/icon="res://Assets/sp_player.png"
 
 MenegerNawigacji="*res://Scripts/Global/meneger_nawigacji.gd"
 ZmianaSceny="*res://Scenes/zmiana_sceny.tscn"
+MenegerCoinow="*res://Scripts/Global/meneger_coinow.gd"
 
 [display]
 
