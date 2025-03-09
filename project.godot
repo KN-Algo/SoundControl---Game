@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="platform tutorial"
-run/main_scene="res://Scenes/world.tscn"
+run/main_scene="res://Scenes/main_menu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://Assets/sp_player.png"
 
@@ -20,6 +20,7 @@ config/icon="res://Assets/sp_player.png"
 MenegerNawigacji="*res://Scripts/Global/meneger_nawigacji.gd"
 ZmianaSceny="*res://Scenes/zmiana_sceny.tscn"
 MenegerCoinow="*res://Scripts/Global/meneger_coinow.gd"
+GlobaTimer="*res://Scripts/Global/globa_timer.gd"
 
 [display]
 

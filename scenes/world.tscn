@@ -270,14 +270,9 @@ script = ExtResource("1_3508x")
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_feo6n")]
 position = Vector2(56, 99)
 
-[node name="TileMap" type="TileMap" parent="."]
-tile_set = SubResource("TileSet_c77e5")
-rendering_quadrant_size = 32
-collision_visibility_mode = 1
-format = 2
-
 [node name="map" type="TileMapLayer" parent="."]
 use_parent_material = true
+scale = Vector2(0.998569, 0.997624)
 tile_map_data = PackedByteArray("AAAAAAAAAQACAAIAAAAAAAEAAQABAAIAAAAAAAIAAQABAAMAAAAAAAMAAQABAAMAAAAAAAQAAQABAAMAAAAAAAUAAQACAAMAAAABAAUAAQACAAEAAAACAAUAAQADAAEAAAADAAUAAQADAAEAAAAEAAUAAQADAAMAAAAEAAQAAQABAAMAAAAEAAMAAQACAAIAAAAFAAMAAQACAAEAAAAGAAMAAQACAAEAAAAHAAMAAQADAAIAAAAHAAQAAQAEAAMAAAAHAAUAAQACAAMAAAAIAAUAAQACAAEAAAAJAAUAAQADAAEAAAAKAAUAAQADAAEAAAALAAUAAQADAAEAAAAMAAUAAQADAAMAAAAMAAQAAQABAAQAAAAMAAMAAQABAAMAAAAMAAIAAQABAAMAAAAMAAEAAQABAAMAAAAMAAAAAQADAAIAAAABAAAAAQAEAAIAAAALAAAAAQAEAAIAAAA=")
 tile_set = SubResource("TileSet_c77e5")
 rendering_quadrant_size = 32
@@ -296,7 +291,6 @@ destination_door_tag = "Wejscie"
 position = Vector2(-24, 0)
 
 [node name="Wejscie" parent="." instance=ExtResource("5_u262u")]
-visible = false
 position = Vector2(64, 152)
 scale = Vector2(-1, 1)
 
@@ -304,6 +298,7 @@ scale = Vector2(-1, 1)
 
 [node name="Area2D" parent="KillingZone" index="0"]
 position = Vector2(368, 40)
+scale = Vector2(0.999014, 1)
 destination_level_tag = "world"
 destination_door_tag = "Wejscie"
 
