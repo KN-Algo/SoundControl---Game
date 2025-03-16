@@ -1,69 +1,50 @@
-[gd_scene load_steps=6 format=3 uid="uid://cokf6cgavixye"]
+[gd_scene load_steps=6 format=4 uid="uid://cokf6cgavixye"]
 
 [ext_resource type="Texture2D" uid="uid://d2fm1yn5ulk7p" path="res://Assets/layout.png" id="1_pdkkt"]
 [ext_resource type="PackedScene" uid="uid://dep84ljo21h76" path="res://Scenes/player.tscn" id="2_dn1i1"]
 [ext_resource type="PackedScene" uid="uid://bjh2blgh5h25p" path="res://Scenes/coin.tscn" id="2_rp2lc"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5oov8"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tl7gw"]
 texture = ExtResource("1_pdkkt")
 texture_region_size = Vector2i(32, 32)
-10:0/0 = 0
-13:0/0 = 0
-18:0/0 = 0
-19:0/0 = 0
-10:1/0 = 0
-13:1/0 = 0
-15:1/0 = 0
-16:1/0 = 0
-18:1/0 = 0
-19:1/0 = 0
-11:2/0 = 0
-12:2/0 = 0
-15:2/0 = 0
-16:2/0 = 0
-10:3/0 = 0
-11:3/0 = 0
-12:3/0 = 0
-13:3/0 = 0
 0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.617, -16.2635, 16.617, -15.9099, 15.9099, 16.617, -15.9099, 16.617)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 1:0/0 = 0
-1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-0.707108, -0.707108, 16.617, -15.9099, 15.9099, 16.617, -15.9099, 16.617)
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -16, -16, 16, 16, 16)
 2:0/0 = 0
-2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15.9099, -16.9706, -1.76777, -3.18198, 16.617, 15.9099, -15.9099, 16.617)
-2:1/0 = 0
-1:1/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 16, 16, 16, -16, -16)
 3:0/0 = 0
 4:0/0 = 0
 5:0/0 = 0
-5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15.9099, -16.9706, 0.35355, -17.3241, 0.707104, 16.617, -15.9099, 16.617)
 6:0/0 = 0
-6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(17.3241, -15.2028, 0.35355, -17.3241, 0.707104, 16.617, 16.2635, 16.617)
 7:0/0 = 0
-7:1/0 = 0
-8:1/0 = 0
 8:0/0 = 0
+9:0/0 = 0
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -16, 16, 16, -16, -16)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -16, -16, 16, -16, -16)
+3:1/0 = 0
+4:1/0 = 0
 5:1/0 = 0
 6:1/0 = 0
-4:1/0 = 0
-3:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+3:2/0 = 0
 
-[sub_resource type="TileSet" id="TileSet_q28lk"]
+[sub_resource type="TileSet" id="TileSet_fimwg"]
+tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
-terrain_set_0/mode = 0
-sources/0 = SubResource("TileSetAtlasSource_5oov8")
+sources/0 = SubResource("TileSetAtlasSource_tl7gw")
 
 [node name="Testowy" type="Node2D"]
 
-[node name="TileMap" type="TileMap" parent="."]
-tile_set = SubResource("TileSet_q28lk")
-rendering_quadrant_size = 32
-collision_animatable = true
-format = 2
-layer_0/tile_data = PackedInt32Array(655361, 0, 0, 655362, 0, 0, 655363, 0, 0, 655364, 0, 0, 655365, 0, 0, 655366, 0, 0, 655367, 0, 0, 655368, 0, 0, 655369, 0, 0, 655370, 0, 0, 655371, 0, 0, 655372, 0, 0, 655373, 0, 0, 655374, 0, 0, 655375, 0, 0, 655376, 0, 0, 655377, 0, 0, 655378, 0, 0, 589825, 327680, 0, 524289, 327680, 0, 524306, 393216, 0)
-
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_dn1i1")]
 position = Vector2(48, 133)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAABAAUAAAAAAAAAAAACAAUAAAAAAAAAAAADAAUAAAAAAAAAAAAEAAUAAAAAAAAAAAAFAAUAAAAAAAAAAAAGAAUAAAAAAAAAAAAHAAUAAAAAAAAAAAAIAAUAAAAAAAAAAAAJAAUAAAAAAAAAAAAJAAQAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAMAAAAAAAAAAAAJAAMAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_fimwg")
 
 [node name="Coin\'y" type="Node" parent="."]
 

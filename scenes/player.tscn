@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dep84ljo21h76"]
+[gd_scene load_steps=5 format=3 uid="uid://dep84ljo21h76"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_j5t1g"]
 [ext_resource type="Texture2D" uid="uid://tx2356taaw0x" path="res://Assets/sp_player.png" id="2_r57do"]
+[ext_resource type="PackedScene" uid="uid://bm77a1ac2gvby" path="res://Scenes/timer.tscn" id="3_7bqdd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ne1pj"]
 
@@ -16,8 +17,14 @@ script = ExtResource("1_j5t1g")
 shape = SubResource("CircleShape2D_ne1pj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -9.53674e-07)
 scale = Vector2(0.65, 0.65)
 texture = ExtResource("2_r57do")
-offset = Vector2(-0.25, 16)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Timer" parent="Camera2D" instance=ExtResource("3_7bqdd")]
+offset_left = -160.0
+offset_top = -90.0
+offset_right = -160.0
+offset_bottom = -90.0
