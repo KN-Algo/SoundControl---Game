@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://1ykjhuwmwqk3"]
 
-[ext_resource type="Script" path="res://Scripts/zmiana_sceny.gd" id="1_ynsha"]
+[ext_resource type="Script" uid="uid://bdbb1ykfwhc7n" path="res://Scripts/zmiana_sceny.gd" id="1_ynsha"]
 
 [sub_resource type="Animation" id="Animation_v2hmd"]
 length = 0.001
@@ -51,9 +51,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gacmk"]
 _data = {
-"RESET": SubResource("Animation_v2hmd"),
-"fade_in": SubResource("Animation_53g4a"),
-"fade_out": SubResource("Animation_r4usf")
+&"RESET": SubResource("Animation_v2hmd"),
+&"fade_in": SubResource("Animation_53g4a"),
+&"fade_out": SubResource("Animation_r4usf")
 }
 
 [node name="zmiana_sceny" type="CanvasLayer"]

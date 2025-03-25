@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://cxa53314dxov"]
 
-[ext_resource type="Script" path="res://Scripts/moving_platforms_controll.gd" id="1_r0qg1"]
+[ext_resource type="Script" uid="uid://yf4dvhgov6og" path="res://Scripts/moving_platforms_controll.gd" id="1_r0qg1"]
 [ext_resource type="Texture2D" uid="uid://f6eff2nx32hq" path="res://Assets/plums.png" id="2_ktvip"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8fr8f"]
@@ -40,8 +40,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cs7n4"]
 _data = {
-"RESET": SubResource("Animation_p0hph"),
-"move": SubResource("Animation_g1ek8")
+&"RESET": SubResource("Animation_p0hph"),
+&"move": SubResource("Animation_g1ek8")
 }
 
 [node name="Path2D" type="Path2D"]

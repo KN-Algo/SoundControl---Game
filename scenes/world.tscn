@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=4 uid="uid://dccj8srylfk0h"]
 
-[ext_resource type="Script" path="res://Scripts/world.gd" id="1_3508x"]
+[ext_resource type="Script" uid="uid://b6c11hi4evt12" path="res://Scripts/world.gd" id="1_3508x"]
 [ext_resource type="PackedScene" uid="uid://dep84ljo21h76" path="res://Scenes/player.tscn" id="2_feo6n"]
 [ext_resource type="Texture2D" uid="uid://f6eff2nx32hq" path="res://Assets/plums.png" id="3_o5kx0"]
 [ext_resource type="PackedScene" uid="uid://cxa53314dxov" path="res://Scenes/moving_platforms.tscn" id="4_rifsp"]

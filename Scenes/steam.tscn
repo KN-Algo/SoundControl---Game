@@ -1,7 +1,7 @@
 [gd_scene load_steps=30 format=3 uid="uid://dtjf7p705e7cb"]
 
 [ext_resource type="Texture2D" uid="uid://dfif637wqpycc" path="res://Assets/5_magickahit_spritesheet.png" id="1_s1ubh"]
-[ext_resource type="Script" path="res://Scenes/animated_sprite_2d.gd" id="2_mjqod"]
+[ext_resource type="Script" uid="uid://6cyt76wvb008" path="res://Scenes/animated_sprite_2d.gd" id="2_mjqod"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4l4bh"]
 atlas = ExtResource("1_s1ubh")
