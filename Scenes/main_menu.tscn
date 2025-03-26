@@ -1,33 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://qyngyu1w7wy1"]
+[gd_scene load_steps=7 format=3 uid="uid://qyngyu1w7wy1"]
 
 [ext_resource type="Texture2D" uid="uid://c53n54kx5jred" path="res://Assets/8673fad6-62bf-4416-804b-65f793599224.jpg" id="1_gty6d"]
-[ext_resource type="Script" uid="uid://b0rmsc2emtdq3" path="res://Scenes/main_menu.gd" id="1_uctow"]
+[ext_resource type="Script" uid="uid://b0rmsc2emtdq3" path="res://Scripts/main_menu.gd" id="1_uctow"]
 [ext_resource type="FontFile" uid="uid://1yojaetmvbqq" path="res://Fonts/Geosteam-eJap.ttf" id="2_w07nb"]
+[ext_resource type="Theme" uid="uid://ba3hevwivo74i" path="res://main_theme.tres" id="3_n45e2"]
 [ext_resource type="AudioStream" uid="uid://d2vxbuvl8e2kh" path="res://Sounds/Menu_music.mp3" id="4_dxdhh"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3iuwm"]
 texture = ExtResource("1_gty6d")
 modulate_color = Color(0.529067, 0.529067, 0.529067, 1)
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t3fj1"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6gbm2"]
-bg_color = Color(0.454524, 0.454524, 0.454524, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-shadow_size = 5
-shadow_offset = Vector2(0, 3.41)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wsavb"]
-bg_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-shadow_size = 5
-shadow_offset = Vector2(0, 3.41)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -62,52 +43,21 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 7
 
-[node name="Button" type="Button" parent="VBoxContainer"]
+[node name="Play" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(100, 25)
 layout_mode = 2
-size_flags_vertical = 3
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+size_flags_vertical = 4
+theme = ExtResource("3_n45e2")
 theme_override_fonts/font = ExtResource("2_w07nb")
-theme_override_font_sizes/font_size = 8
-theme_override_styles/focus = SubResource("StyleBoxEmpty_t3fj1")
-theme_override_styles/hover = SubResource("StyleBoxFlat_6gbm2")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_wsavb")
-theme_override_styles/normal = SubResource("StyleBoxFlat_wsavb")
 text = "PLAY"
 
-[node name="Button2" type="Button" parent="VBoxContainer"]
+[node name="Exit" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(100, 25)
 layout_mode = 2
-size_flags_vertical = 3
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+size_flags_vertical = 4
+theme = ExtResource("3_n45e2")
 theme_override_fonts/font = ExtResource("2_w07nb")
-theme_override_font_sizes/font_size = 8
-theme_override_styles/focus = SubResource("StyleBoxEmpty_t3fj1")
-theme_override_styles/hover = SubResource("StyleBoxFlat_6gbm2")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_wsavb")
-theme_override_styles/normal = SubResource("StyleBoxFlat_wsavb")
-text = "SETTINGS
-"
-
-[node name="Button3" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_w07nb")
-theme_override_font_sizes/font_size = 8
-theme_override_styles/focus = SubResource("StyleBoxEmpty_t3fj1")
-theme_override_styles/hover = SubResource("StyleBoxFlat_6gbm2")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_wsavb")
-theme_override_styles/normal = SubResource("StyleBoxFlat_wsavb")
-text = "EXIT
-"
+text = "EXIT"
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -131,6 +81,5 @@ volume_db = -9.143
 autoplay = true
 parameters/looping = true
 
-[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]

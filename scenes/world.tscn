@@ -1,11 +1,9 @@
-[gd_scene load_steps=10 format=4 uid="uid://dccj8srylfk0h"]
+[gd_scene load_steps=8 format=4 uid="uid://dccj8srylfk0h"]
 
-[ext_resource type="Script" uid="uid://b6c11hi4evt12" path="res://Scripts/world.gd" id="1_3508x"]
 [ext_resource type="PackedScene" uid="uid://dep84ljo21h76" path="res://Scenes/player.tscn" id="2_feo6n"]
 [ext_resource type="Texture2D" uid="uid://f6eff2nx32hq" path="res://Assets/plums.png" id="3_o5kx0"]
 [ext_resource type="PackedScene" uid="uid://cxa53314dxov" path="res://Scenes/moving_platforms.tscn" id="4_rifsp"]
-[ext_resource type="PackedScene" uid="uid://dkyqtr7vapeok" path="res://Scenes/rura_teleport.tscn" id="5_u262u"]
-[ext_resource type="PackedScene" uid="uid://dewk7qr2x1iiy" path="res://Scenes/killing_zone.tscn" id="6_6r0lh"]
+[ext_resource type="PackedScene" uid="uid://dkyqtr7vapeok" path="res://Scenes/Pipe.tscn" id="5_u262u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i8enc"]
 texture = ExtResource("3_o5kx0")
@@ -45,9 +43,9 @@ texture_region_size = Vector2i(32, 32)
 1:2/0 = 0
 1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6.0625, -16, 6.0625, -16, 6.0625, 16, -5.6875, 16)
 2:2/0 = 0
-2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-1.9375, -2.5, 16, -5.25, 16, 16, -6.0625, 16)
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -6, -2, 0, -6, 16, 10, 16, 16, 10)
 3:2/0 = 0
-3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -5.875, 2.6875, -2.75, 6.0625, 16, -16, 16)
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -6, 2, 0, 6, 16, -10, 16, -16, 10)
 4:2/0 = 0
 4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 6:2/0 = 0
@@ -69,11 +67,11 @@ texture_region_size = Vector2i(32, 32)
 1:3/0 = 0
 1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6.0625, -16, 6.0625, -16, 6.0625, 16, -5.6875, 16)
 2:3/0 = 0
-2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5.6875, -16, 16, -16, 16, 6, -2.0625, 2)
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, 6, -2, 0, -6, -16, 10, -16, 16, -10)
 3:3/0 = 0
-3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 5.5625, -16, 2.3125, 1.625, -16, 5.375)
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 6, 2, 0, 6, -16, -10, -16, -16, -10)
 4:3/0 = 0
-4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(6, -16, -6, -16, -6, 16, 6, 16)
 6:3/0 = 0
 7:3/0 = 0
 8:3/0 = 0
@@ -265,9 +263,8 @@ _data = {
 point_count = 2
 
 [node name="World" type="Node2D"]
-script = ExtResource("1_3508x")
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("2_feo6n")]
+[node name="Player" parent="." instance=ExtResource("2_feo6n")]
 position = Vector2(56, 99)
 
 [node name="map" type="TileMapLayer" parent="."]
@@ -281,30 +278,17 @@ rendering_quadrant_size = 32
 position = Vector2(346, 79)
 curve = SubResource("Curve2D_cm0dg")
 
-[node name="Wyjscie" parent="." instance=ExtResource("5_u262u")]
-position = Vector2(368, 152)
-teleport = true
-destination_level_tag = "etap_1"
-destination_door_tag = "Wejscie"
+[node name="Exit" parent="." instance=ExtResource("5_u262u")]
+position = Vector2(378, 154)
+level_on_entry = "level2"
 
-[node name="Spawn" parent="Wyjscie" index="0"]
+[node name="Spawn" parent="Exit" index="0"]
 position = Vector2(-24, 0)
 
-[node name="Wejscie" parent="." instance=ExtResource("5_u262u")]
-position = Vector2(64, 152)
+[node name="Entry" parent="." instance=ExtResource("5_u262u")]
+position = Vector2(38, 154)
 scale = Vector2(-1, 1)
+entry = true
 
-[node name="KillingZone" parent="." instance=ExtResource("6_6r0lh")]
-
-[node name="Area2D" parent="KillingZone" index="0"]
-position = Vector2(368, 40)
-scale = Vector2(0.999014, 1)
-destination_level_tag = "world"
-destination_door_tag = "Wejscie"
-
-[node name="CollisionShape2D" parent="KillingZone/Area2D" index="0"]
-position = Vector2(3, 0)
-
-[editable path="Wyjscie"]
-[editable path="Wejscie"]
-[editable path="KillingZone"]
+[editable path="Exit"]
+[editable path="Entry"]

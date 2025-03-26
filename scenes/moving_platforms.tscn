@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cxa53314dxov"]
+[gd_scene load_steps=8 format=3 uid="uid://cxa53314dxov"]
 
 [ext_resource type="Script" uid="uid://yf4dvhgov6og" path="res://Scripts/moving_platforms_controll.gd" id="1_r0qg1"]
 [ext_resource type="Texture2D" uid="uid://f6eff2nx32hq" path="res://Assets/plums.png" id="2_ktvip"]
+
+[sub_resource type="Curve2D" id="Curve2D_qomqx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8fr8f"]
 size = Vector2(34, 12)
@@ -45,9 +47,12 @@ _data = {
 }
 
 [node name="Path2D" type="Path2D"]
+curve = SubResource("Curve2D_qomqx")
 script = ExtResource("1_r0qg1")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
+progress = 115.65
+rotates = false
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="PathFollow2D"]
 remote_path = NodePath("../../AnimatableBody2D")
@@ -64,5 +69,5 @@ shape = SubResource("RectangleShape2D_8fr8f")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_cs7n4")
+&"": SubResource("AnimationLibrary_cs7n4")
 }

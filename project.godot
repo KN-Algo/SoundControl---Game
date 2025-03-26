@@ -10,17 +10,15 @@ config_version=5
 
 [application]
 
-config/name="platform tutorial"
+config/name="Steamphony"
 run/main_scene="res://Scenes/main_menu.tscn"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://Assets/sp_player.png"
 
 [autoload]
 
-MenegerNawigacji="*res://Scripts/Global/meneger_nawigacji.gd"
-ZmianaSceny="*res://Scenes/zmiana_sceny.tscn"
-MenegerCoinow="*res://Scripts/Global/meneger_coinow.gd"
-GlobaTimer="*res://Scripts/Global/globa_timer.gd"
+SceneTransition="*res://Scenes/SceneTransition.tscn"
+LevelManager="*res://Scripts/LevelManager.gd"
 
 [display]
 
@@ -33,6 +31,15 @@ window/stretch/mode="canvas_items"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/kanban_tasks/plugin.cfg")
+
+[global_group]
+
+pipe=""
+player=""
+
+[gui]
+
+theme/custom="uid://ba3hevwivo74i"
 
 [rendering]
 

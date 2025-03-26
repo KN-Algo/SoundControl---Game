@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://1ykjhuwmwqk3"]
 
-[ext_resource type="Script" uid="uid://bdbb1ykfwhc7n" path="res://Scripts/zmiana_sceny.gd" id="1_ynsha"]
+[ext_resource type="Script" uid="uid://bdbb1ykfwhc7n" path="res://Scripts/SceneTransition.gd" id="1_rryme"]
 
 [sub_resource type="Animation" id="Animation_v2hmd"]
 length = 0.001
@@ -56,8 +56,8 @@ _data = {
 &"fade_out": SubResource("Animation_r4usf")
 }
 
-[node name="zmiana_sceny" type="CanvasLayer"]
-script = ExtResource("1_ynsha")
+[node name="SceneTransition" type="CanvasLayer"]
+script = ExtResource("1_rryme")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -69,5 +69,5 @@ color = Color(0.333333, 0.176471, 0.117647, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_gacmk")
+&"": SubResource("AnimationLibrary_gacmk")
 }
