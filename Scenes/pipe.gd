@@ -5,5 +5,6 @@ extends Area2D
 
 
 func _on_body_entered(body):
-	LevelManager.entry=entry
-	LevelManager.change_level(level_on_entry)
+	if 	LevelManager.can_change:
+		LevelManager.entry=entry
+		LevelManager.change_level(level_on_entry)

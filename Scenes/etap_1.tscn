@@ -54,6 +54,8 @@ layer_0/tile_data = PackedInt32Array(327680, 0, 0, 327681, 0, 0, 327682, 0, 0, 3
 [node name="Wejscie" parent="." instance=ExtResource("2_fk0xu")]
 position = Vector2(16, 144)
 scale = Vector2(-1, 1)
+entry = true
+level_on_entry = "level1"
 
 [node name="Spawn" parent="Wejscie" index="0"]
 position = Vector2(-20, -1)

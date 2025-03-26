@@ -34,6 +34,7 @@ alpha_curve = SubResource("CurveTexture_e6chc")
 script = ExtResource("1_l0b62")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+z_index = 5
 emitting = false
 amount = 24
 one_shot = true

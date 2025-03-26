@@ -51,6 +51,14 @@ theme = ExtResource("3_n45e2")
 theme_override_fonts/font = ExtResource("2_w07nb")
 text = "PLAY"
 
+[node name="Settings" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(100, 25)
+layout_mode = 2
+size_flags_vertical = 4
+theme = ExtResource("3_n45e2")
+theme_override_fonts/font = ExtResource("2_w07nb")
+text = "SETTINGS"
+
 [node name="Exit" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(100, 25)
 layout_mode = 2
@@ -82,4 +90,5 @@ autoplay = true
 parameters/looping = true
 
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]

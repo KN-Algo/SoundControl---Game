@@ -10,25 +10,51 @@
 		{
 			"uuid": "fd0d694a-ebc8-4426-9644-3da2ba134f67",
 			"title": "Todo",
-			"tasks": []
+			"tasks": [
+				"fe63f7f3-6542-4653-ab0e-73153ef04319"
+			]
 		},
 		{
 			"uuid": "dabe1952-6805-41bf-bf31-0344de42dbae",
 			"title": "Doing",
 			"tasks": [
-				"e0081a61-3572-46dc-9eba-a698d115a2ad"
+				"37659ef6-cca5-49d7-80f9-aa7dc605136b"
 			]
 		},
 		{
 			"uuid": "4bec28bd-2fe3-4118-a65b-6030c1a395dd",
 			"title": "Done",
-			"tasks": []
+			"tasks": [
+				"a73f38b3-95cf-4a23-864a-9f6015071f9d",
+				"e0081a61-3572-46dc-9eba-a698d115a2ad"
+			]
 		}
 	],
 	"tasks": [
 		{
 			"uuid": "e0081a61-3572-46dc-9eba-a698d115a2ad",
 			"title": "Level changing",
+			"description": "",
+			"category": "0594825f-ca27-4d7e-bcee-644e440de6aa",
+			"steps": []
+		},
+		{
+			"uuid": "a73f38b3-95cf-4a23-864a-9f6015071f9d",
+			"title": "Level transition",
+			"description": "",
+			"category": "0594825f-ca27-4d7e-bcee-644e440de6aa",
+			"steps": []
+		},
+		{
+			"uuid": "fe63f7f3-6542-4653-ab0e-73153ef04319",
+			"title": "Pipe teleport",
+			"description": "",
+			"category": "0594825f-ca27-4d7e-bcee-644e440de6aa",
+			"steps": []
+		},
+		{
+			"uuid": "37659ef6-cca5-49d7-80f9-aa7dc605136b",
+			"title": "Coins",
 			"description": "",
 			"category": "0594825f-ca27-4d7e-bcee-644e440de6aa",
 			"steps": []

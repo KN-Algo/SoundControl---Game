@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://dkyqtr7vapeok"]
+[gd_scene load_steps=7 format=3 uid="uid://2tbu4254uwcb"]
 
-[ext_resource type="Script" uid="uid://cyow8cd4kkg37" path="res://Scenes/pipe.gd" id="1_nq301"]
-[ext_resource type="Texture2D" uid="uid://bohq2oqldyowk" path="res://Assets/rura_drzwi.png" id="2_t5chl"]
+[ext_resource type="Script" uid="uid://c6penyscp3lrk" path="res://Scenes/pipe_teleport.gd" id="1_mdp3o"]
+[ext_resource type="Texture2D" uid="uid://bohq2oqldyowk" path="res://Assets/rura_drzwi.png" id="2_2qv2n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r8ose"]
 size = Vector2(13, 28)
@@ -16,13 +16,13 @@ size = Vector2(27, 1)
 size = Vector2(1, 29)
 
 [node name="Pipe" type="Area2D" groups=["pipe"]]
-script = ExtResource("1_nq301")
+script = ExtResource("1_mdp3o")
 
 [node name="Spawn" type="Marker2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 10
-texture = ExtResource("2_t5chl")
+texture = ExtResource("2_2qv2n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(9.5, 2)

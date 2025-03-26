@@ -17,8 +17,8 @@ config/icon="res://Assets/sp_player.png"
 
 [autoload]
 
-SceneTransition="*res://Scenes/SceneTransition.tscn"
 LevelManager="*res://Scripts/LevelManager.gd"
+SceneTransition="*res://Scripts/SceneTransition.tscn"
 
 [display]
 

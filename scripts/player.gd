@@ -1,21 +1,32 @@
 extends CharacterBody2D
 
 class_name Player
+@onready var camera_2d = $Camera2D
 
 const STEAM = preload("res://Scenes/steam.tscn")
 const SPEED = 150.0
-const JUMP_VELOCITY = -300.0
+const JUMP_VELOCITY = -350.0
 var x_velocity=1
 @onready var sprite_2d: Sprite2D = $Sprite2D
 func _ready():
+	
+	print(LevelManager.entry)
+	print("start")
 	var pipes=get_tree().get_nodes_in_group("pipe")
 	for pipe in pipes:
-		if pipe.entry and LevelManager.entry:
+		if pipe.entry and !LevelManager.entry:
 			global_position=pipe.global_position
-		elif !pipe.entry and !LevelManager.entry:
+			x_velocity=1
+		elif !pipe.entry and LevelManager.entry:
 			global_position=pipe.global_position
+			x_velocity=-1
+	camera_2d.reset_smoothing()
+	
+			
 		
 func _physics_process(delta: float) -> void:
+	if LevelManager.is_changing:
+		return
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
@@ -32,7 +43,7 @@ func _physics_process(delta: float) -> void:
 	if is_on_wall():
 		pass
 		#x_velocity*=-1
-		
+	
 	velocity.x = x_velocity * SPEED
 	sprite_2d.rotate(0.2*sign(velocity.x))
 

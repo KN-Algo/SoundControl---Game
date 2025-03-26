@@ -8,7 +8,12 @@ func _ready() -> void:
 
 
 func _on_play_pressed() -> void:
+	LevelManager.entry=false
 	LevelManager.change_level("level1")
 
 func _on_exit_pressed() -> void:
 	get_tree().quit()
+
+
+func _on_settings_pressed():
+	print("MENU")

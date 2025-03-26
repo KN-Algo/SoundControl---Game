@@ -1,22 +1,18 @@
 extends CanvasLayer
-
-signal on_transition_finished
-
-@onready var color_rect = $ColorRect
-@onready var animation_player = $AnimationPlayer
-
-func _ready():
-	color_rect.visible = false
-	animation_player.animation_finished.connect(_on_animation_finished)
+@onready var canvas_modulate = $CanvasModulate
+signal faded_in
+signal faded_out
+var fade_time=0.25
+func fade_in():
+	canvas_modulate.modulate=Color(1,1,1,0)
+	var tween=get_tree().create_tween()
+	tween.tween_property(canvas_modulate,"modulate",Color(1,1,1,1),fade_time)
+	await tween.finished
+	faded_in.emit()
 	
-func _on_animation_finished(animation_name):
-	if animation_name == "fade_in":
-		on_transition_finished.emit()
-		animation_player.play("fade_out")
-		
-	elif animation_name == "fade_out":
-		color_rect.visible = false
-
-func transition():
-	color_rect.visible = true
-	animation_player.play("fade_in")
+func fade_out():
+	canvas_modulate.modulate=Color(1,1,1,1)
+	var tween=get_tree().create_tween()
+	tween.tween_property(canvas_modulate,"modulate",Color(1,1,1,0),fade_time)
+	await tween.finished
+	faded_out.emit()
