@@ -1,0 +1,39 @@
+[gd_scene load_steps=2 format=3 uid="uid://bm77a1ac2gvby"]
+
+[ext_resource type="Script" uid="uid://b3cnpakcfch5u" path="res://Scripts/time_label.gd" id="1_y16bx"]
+
+[node name="Timer" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_y16bx")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 72.0
+offset_bottom = 24.0
+
+[node name="mins" type="Label" parent="Panel"]
+layout_mode = 0
+offset_right = 24.0
+offset_bottom = 23.0
+text = "00:"
+horizontal_alignment = 2
+
+[node name="secs" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 24.0
+offset_right = 48.0
+offset_bottom = 23.0
+text = "00:"
+horizontal_alignment = 2
+
+[node name="msecs" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 48.0
+offset_right = 72.0
+offset_bottom = 23.0
+text = "00"

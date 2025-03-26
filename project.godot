@@ -19,6 +19,7 @@ config/icon="res://Assets/sp_player.png"
 
 SceneTransition="*res://Scenes/SceneTransition.tscn"
 LevelManager="*res://Scripts/LevelManager.gd"
+GlobalTimer="*res://Scripts/G_timer.gd"
 
 [display]
 
