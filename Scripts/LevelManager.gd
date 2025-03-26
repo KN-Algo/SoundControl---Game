@@ -4,6 +4,7 @@ var is_changing=false
 var level_dict={"mainmenu":"res://Scenes/main_menu.tscn",
 	"level1":"res://Scenes/world.tscn",
 "level2":"res://Scenes/etap_1.tscn"}
+var current_level="mainmenu"
 var entry=false
 func change_level(level_name):
 	is_changing=true
@@ -16,9 +17,13 @@ func change_level(level_name):
 		SceneTransition.fade_out()
 		await SceneTransition.faded_out
 		is_changing=false
+		current_level=level_name
 		
 	else:
 		print("level not found")
 	await get_tree().create_timer(0.1).timeout
 	can_change=true
+	
+func restart():
+	change_level(current_level)
 	

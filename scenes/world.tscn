@@ -1,9 +1,14 @@
-[gd_scene load_steps=8 format=4 uid="uid://dccj8srylfk0h"]
+[gd_scene load_steps=12 format=4 uid="uid://dccj8srylfk0h"]
 
 [ext_resource type="PackedScene" uid="uid://dep84ljo21h76" path="res://Scenes/player.tscn" id="2_feo6n"]
 [ext_resource type="Texture2D" uid="uid://f6eff2nx32hq" path="res://Assets/plums.png" id="3_o5kx0"]
 [ext_resource type="PackedScene" uid="uid://cxa53314dxov" path="res://Scenes/moving_platforms.tscn" id="4_rifsp"]
+[ext_resource type="Script" uid="uid://cxf63bkqipemo" path="res://Scripts/killing_zone.gd" id="5_fo5ed"]
 [ext_resource type="PackedScene" uid="uid://dkyqtr7vapeok" path="res://Scenes/Pipe.tscn" id="5_u262u"]
+[ext_resource type="PackedScene" uid="uid://bjh2blgh5h25p" path="res://Scenes/coin.tscn" id="6_5ukr8"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_5ukr8"]
+scenes/1/scene = ExtResource("6_5ukr8")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i8enc"]
 texture = ExtResource("3_o5kx0")
@@ -255,12 +260,15 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_i8enc")
+sources/0 = SubResource("TileSetScenesCollectionSource_5ukr8")
 
 [sub_resource type="Curve2D" id="Curve2D_cm0dg"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 30, 17, 0, 0, 0, 0, -26, 17)
 }
 point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ukr8"]
 
 [node name="World" type="Node2D"]
 
@@ -270,7 +278,7 @@ position = Vector2(56, 99)
 [node name="map" type="TileMapLayer" parent="."]
 use_parent_material = true
 scale = Vector2(0.998569, 0.997624)
-tile_map_data = PackedByteArray("AAAAAAAAAQACAAIAAAAAAAEAAQABAAIAAAAAAAIAAQABAAMAAAAAAAMAAQABAAMAAAAAAAQAAQABAAMAAAAAAAUAAQACAAMAAAABAAUAAQACAAEAAAACAAUAAQADAAEAAAADAAUAAQADAAEAAAAEAAUAAQADAAMAAAAEAAQAAQABAAMAAAAEAAMAAQACAAIAAAAFAAMAAQACAAEAAAAGAAMAAQACAAEAAAAHAAMAAQADAAIAAAAHAAQAAQAEAAMAAAAHAAUAAQACAAMAAAAIAAUAAQACAAEAAAAJAAUAAQADAAEAAAAKAAUAAQADAAEAAAALAAUAAQADAAEAAAAMAAUAAQADAAMAAAAMAAQAAQABAAQAAAAMAAMAAQABAAMAAAAMAAIAAQABAAMAAAAMAAEAAQABAAMAAAAMAAAAAQADAAIAAAABAAAAAQAEAAIAAAALAAAAAQAEAAIAAAA=")
+tile_map_data = PackedByteArray("AAAAAAAAAQACAAIAAAAAAAEAAQABAAIAAAAAAAIAAQABAAMAAAAAAAMAAQABAAMAAAAAAAQAAQABAAMAAAAAAAUAAQACAAMAAAABAAUAAQACAAEAAAACAAUAAQADAAEAAAADAAUAAQADAAEAAAAEAAUAAQADAAMAAAAEAAQAAQABAAMAAAAEAAMAAQACAAIAAAAFAAMAAQACAAEAAAAGAAMAAQACAAEAAAAHAAMAAQADAAIAAAAHAAQAAQAEAAMAAAAHAAUAAQACAAMAAAAIAAUAAQACAAEAAAAJAAUAAQADAAEAAAAKAAUAAQADAAEAAAALAAUAAQADAAEAAAAMAAUAAQADAAMAAAAMAAQAAQABAAQAAAAMAAMAAQABAAMAAAAMAAIAAQABAAMAAAAMAAEAAQABAAMAAAAMAAAAAQADAAIAAAABAAAAAQAEAAIAAAALAAAAAQAEAAIAAAAEAAIAAAAAAAAAAQAFAAIAAAAAAAAAAQAGAAIAAAAAAAAAAQA=")
 tile_set = SubResource("TileSet_c77e5")
 rendering_quadrant_size = 32
 
@@ -290,6 +298,18 @@ position = Vector2(38, 154)
 scale = Vector2(-1, 1)
 entry = true
 level_on_entry = "mainmenu"
+
+[node name="KillZone" type="Area2D" parent="."]
+position = Vector2(370, 49)
+script = ExtResource("5_fo5ed")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
+shape = SubResource("RectangleShape2D_5ukr8")
+
+[connection signal="body_entered" from="map/Coin" to="map/Coin" method="_on_body_entered"]
+[connection signal="body_entered" from="map/@Area2D@27427" to="map/@Area2D@27427" method="_on_body_entered"]
+[connection signal="body_entered" from="map/@Area2D@27428" to="map/@Area2D@27428" method="_on_body_entered"]
+[connection signal="body_entered" from="KillZone" to="KillZone" method="_on_body_entered"]
 
 [editable path="Exit"]
 [editable path="Entry"]

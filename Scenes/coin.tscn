@@ -68,7 +68,6 @@ frame_progress = 0.649161
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_5jufg")
-disabled = true
 
 [node name="Pickup_Sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_mfpwt")
