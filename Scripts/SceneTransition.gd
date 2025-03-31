@@ -9,7 +9,7 @@ func fade_in():
 	tween.tween_property(canvas_modulate,"modulate",Color(1,1,1,1),fade_time)
 	await tween.finished
 	faded_in.emit()
-	
+
 func fade_out():
 	canvas_modulate.modulate=Color(1,1,1,1)
 	var tween=get_tree().create_tween()
