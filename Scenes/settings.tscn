@@ -1,0 +1,168 @@
+[gd_scene load_steps=7 format=3 uid="uid://bqwr6u3etofng"]
+
+[ext_resource type="Script" uid="uid://bcl2hdbyrvn51" path="res://Scenes/settings.gd" id="1_lhmql"]
+[ext_resource type="Texture2D" uid="uid://c53n54kx5jred" path="res://Assets/8673fad6-62bf-4416-804b-65f793599224.jpg" id="2_6kysc"]
+[ext_resource type="Script" uid="uid://bs80gain66x2c" path="res://Scenes/keybindui.gd" id="4_aaqfp"]
+[ext_resource type="FontFile" uid="uid://1yojaetmvbqq" path="res://Fonts/Geosteam-eJap.ttf" id="4_f60ng"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3iuwm"]
+texture = ExtResource("2_6kysc")
+modulate_color = Color(0.529067, 0.529067, 0.529067, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lhmql"]
+bg_color = Color(1, 1, 1, 0.211765)
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lhmql")
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -566.0
+offset_top = 85.0
+offset_right = 566.0
+offset_bottom = 344.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_f60ng")
+theme_override_font_sizes/font_size = 128
+text = "STEAMPHONY
+"
+horizontal_alignment = 1
+
+[node name="Panel" type="Panel" parent="."]
+z_index = -10
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_3iuwm")
+
+[node name="Back" type="Button" parent="."]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 0
+offset_left = 70.0
+offset_top = 97.0
+offset_right = 291.0
+offset_bottom = 197.0
+theme_override_fonts/font = ExtResource("4_f60ng")
+text = "BACK"
+
+[node name="Keybinds" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -20.0
+offset_right = 100.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="Keybind" type="Panel" parent="Keybinds"]
+custom_minimum_size = Vector2(800, 120)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lhmql")
+script = ExtResource("4_aaqfp")
+action = "Left"
+
+[node name="VBoxContainer" type="HBoxContainer" parent="Keybinds/Keybind"]
+layout_mode = 1
+offset_right = 800.0
+offset_bottom = 120.0
+theme_override_constants/separation = 15
+
+[node name="Button" type="Button" parent="Keybinds/Keybind/VBoxContainer"]
+custom_minimum_size = Vector2(200, 120)
+layout_mode = 2
+text = "LEFT"
+
+[node name="Binds" type="Label" parent="Keybinds/Keybind/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+
+[node name="Waiting" type="Label" parent="Keybinds/Keybind"]
+visible = false
+layout_mode = 0
+offset_top = -28.0
+offset_right = 131.0
+offset_bottom = -5.0
+text = "Waiting for input..."
+
+[node name="Keybind2" type="Panel" parent="Keybinds"]
+custom_minimum_size = Vector2(800, 120)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lhmql")
+script = ExtResource("4_aaqfp")
+action = "Right"
+
+[node name="VBoxContainer" type="HBoxContainer" parent="Keybinds/Keybind2"]
+layout_mode = 1
+offset_right = 800.0
+offset_bottom = 120.0
+theme_override_constants/separation = 15
+
+[node name="Button" type="Button" parent="Keybinds/Keybind2/VBoxContainer"]
+custom_minimum_size = Vector2(200, 120)
+layout_mode = 2
+text = "LEFT"
+
+[node name="Binds" type="Label" parent="Keybinds/Keybind2/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+
+[node name="Waiting" type="Label" parent="Keybinds/Keybind2"]
+visible = false
+layout_mode = 0
+offset_top = -28.0
+offset_right = 131.0
+offset_bottom = -5.0
+text = "Waiting for input..."
+
+[node name="Keybind3" type="Panel" parent="Keybinds"]
+custom_minimum_size = Vector2(800, 120)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lhmql")
+script = ExtResource("4_aaqfp")
+action = "Jump"
+
+[node name="VBoxContainer" type="HBoxContainer" parent="Keybinds/Keybind3"]
+layout_mode = 1
+offset_right = 800.0
+offset_bottom = 120.0
+theme_override_constants/separation = 15
+
+[node name="Button" type="Button" parent="Keybinds/Keybind3/VBoxContainer"]
+custom_minimum_size = Vector2(200, 120)
+layout_mode = 2
+text = "LEFT"
+
+[node name="Binds" type="Label" parent="Keybinds/Keybind3/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+
+[node name="Waiting" type="Label" parent="Keybinds/Keybind3"]
+visible = false
+layout_mode = 0
+offset_top = -28.0
+offset_right = 131.0
+offset_bottom = -5.0
+text = "Waiting for input..."
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Keybinds/Keybind/VBoxContainer/Button" to="Keybinds/Keybind" method="_on_button_pressed"]
+[connection signal="pressed" from="Keybinds/Keybind2/VBoxContainer/Button" to="Keybinds/Keybind2" method="_on_button_pressed"]
+[connection signal="pressed" from="Keybinds/Keybind3/VBoxContainer/Button" to="Keybinds/Keybind3" method="_on_button_pressed"]

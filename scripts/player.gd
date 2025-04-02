@@ -36,19 +36,18 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	if Input.is_action_just_pressed("Jump") and is_on_floor():
 		spawn_steam(x_velocity/2.0)
 		velocity.y = JUMP_VELOCITY
 	if can_control_direction:
-		direction = int(Input.get_axis("ui_left", "ui_right"))
-		if Input.is_action_just_pressed("ui_left") and x_velocity!=-1 or Input.is_action_just_pressed("ui_right") and x_velocity!=1:
+		direction = int(Input.get_axis("Left", "Right"))
+		if Input.is_action_just_pressed("Left") and x_velocity!=-1 or Input.is_action_just_pressed("Right") and x_velocity!=1:
 			spawn_steam(direction)
 		if direction:
 			x_velocity=direction
 
 	if is_on_wall():
-		pass
-		#x_velocity*=-1
+		x_velocity*=-1
 
 	velocity.x = x_velocity * SPEED
 	sprite_2d.rotate(0.2*sign(velocity.x))

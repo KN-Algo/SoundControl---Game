@@ -11,7 +11,7 @@
 			"uuid": "fd0d694a-ebc8-4426-9644-3da2ba134f67",
 			"title": "Todo",
 			"tasks": [
-				"fe63f7f3-6542-4653-ab0e-73153ef04319"
+				"3ec06541-cb3c-4017-b0c2-149bcc384d78"
 			]
 		},
 		{
@@ -23,6 +23,7 @@
 			"uuid": "4bec28bd-2fe3-4118-a65b-6030c1a395dd",
 			"title": "Done",
 			"tasks": [
+				"bd3d2560-a9bc-4749-8877-5f13bc6f986d",
 				"37659ef6-cca5-49d7-80f9-aa7dc605136b",
 				"a73f38b3-95cf-4a23-864a-9f6015071f9d",
 				"e0081a61-3572-46dc-9eba-a698d115a2ad"
@@ -45,15 +46,22 @@
 			"steps": []
 		},
 		{
-			"uuid": "fe63f7f3-6542-4653-ab0e-73153ef04319",
-			"title": "Pipe teleport",
+			"uuid": "37659ef6-cca5-49d7-80f9-aa7dc605136b",
+			"title": "Coins",
 			"description": "",
 			"category": "0594825f-ca27-4d7e-bcee-644e440de6aa",
 			"steps": []
 		},
 		{
-			"uuid": "37659ef6-cca5-49d7-80f9-aa7dc605136b",
-			"title": "Coins",
+			"uuid": "bd3d2560-a9bc-4749-8877-5f13bc6f986d",
+			"title": "Make settings with key binding",
+			"description": "",
+			"category": "0594825f-ca27-4d7e-bcee-644e440de6aa",
+			"steps": []
+		},
+		{
+			"uuid": "3ec06541-cb3c-4017-b0c2-149bcc384d78",
+			"title": "BPM ui??",
 			"description": "",
 			"category": "0594825f-ca27-4d7e-bcee-644e440de6aa",
 			"steps": []

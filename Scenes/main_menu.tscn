@@ -41,10 +41,10 @@ offset_right = 39.0
 offset_bottom = 66.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 7
+theme_override_constants/separation = 64
 
 [node name="Play" type="Button" parent="VBoxContainer"]
-custom_minimum_size = Vector2(100, 25)
+custom_minimum_size = Vector2(400, 100)
 layout_mode = 2
 size_flags_vertical = 4
 theme = ExtResource("3_n45e2")
@@ -52,7 +52,7 @@ theme_override_fonts/font = ExtResource("2_w07nb")
 text = "PLAY"
 
 [node name="Settings" type="Button" parent="VBoxContainer"]
-custom_minimum_size = Vector2(100, 25)
+custom_minimum_size = Vector2(400, 100)
 layout_mode = 2
 size_flags_vertical = 4
 theme = ExtResource("3_n45e2")
@@ -60,7 +60,7 @@ theme_override_fonts/font = ExtResource("2_w07nb")
 text = "SETTINGS"
 
 [node name="Exit" type="Button" parent="VBoxContainer"]
-custom_minimum_size = Vector2(100, 25)
+custom_minimum_size = Vector2(400, 100)
 layout_mode = 2
 size_flags_vertical = 4
 theme = ExtResource("3_n45e2")
@@ -72,13 +72,13 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -62.0
-offset_top = 25.0
-offset_right = 62.0
-offset_bottom = 55.0
+offset_left = -318.5
+offset_top = 85.0
+offset_right = 318.5
+offset_bottom = 234.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("2_w07nb")
-theme_override_font_sizes/font_size = 17
+theme_override_font_sizes/font_size = 128
 text = "STEAMPHONY
 "
 horizontal_alignment = 1
