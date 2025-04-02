@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://4gyh0wcg2ukh"]
+
+[ext_resource type="AudioStream" uid="uid://cc1mqwlfrucfx" path="res://Assets/metronome.wav" id="1_6hwp6"]
+[ext_resource type="Script" uid="uid://1l14ayxhembd" path="res://metronom.gd" id="1_l06eo"]
+
+[node name="Metronom" type="AudioStreamPlayer"]
+stream = ExtResource("1_6hwp6")
+max_polyphony = 100
+script = ExtResource("1_l06eo")
+
+[node name="Timer" type="Timer" parent="."]
