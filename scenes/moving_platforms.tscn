@@ -4,6 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://f6eff2nx32hq" path="res://Assets/plums.png" id="2_ktvip"]
 
 [sub_resource type="Curve2D" id="Curve2D_qomqx"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 26, 5, 0, 0, 0, 0, -22, -75)
+}
+point_count = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8fr8f"]
 size = Vector2(34, 12)
@@ -51,13 +55,15 @@ curve = SubResource("Curve2D_qomqx")
 script = ExtResource("1_r0qg1")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
-progress = 115.65
+position = Vector2(38.3027, -2.39468)
+progress = 8.31875
 rotates = false
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="PathFollow2D"]
 remote_path = NodePath("../../AnimatableBody2D")
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+position = Vector2(38.3027, -2.39468)
 
 [node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
 texture = ExtResource("2_ktvip")

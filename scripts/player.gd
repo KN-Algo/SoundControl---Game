@@ -12,7 +12,6 @@ var direction=0
 @onready var sprite_2d: Sprite2D = $Sprite2D
 func _ready():
 
-
 	print(LevelManager.entry)
 	print("start")
 	var pipes=get_tree().get_nodes_in_group("pipe")
@@ -29,12 +28,11 @@ func _ready():
 	can_control_direction=true
 
 
-
 func _physics_process(delta: float) -> void:
 	if LevelManager.is_changing:
 		return
 	if not is_on_floor():
-		velocity += get_gravity() * delta
+		velocity += get_gravity() * delta * 1.2
 
 	if Input.is_action_just_pressed("Jump") and is_on_floor():
 		spawn_steam(x_velocity/2.0)
