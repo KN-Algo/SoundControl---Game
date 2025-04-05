@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://cwqnbtnasccqq"]
+[gd_scene load_steps=13 format=4 uid="uid://cwqnbtnasccqq"]
 
 [ext_resource type="Texture2D" uid="uid://dbpcr2o5cnipg" path="res://Assets/Map_assets1.png" id="1_vk57k"]
 [ext_resource type="PackedScene" uid="uid://dkyqtr7vapeok" path="res://Scenes/Pipe.tscn" id="2_xfk5q"]
@@ -82,6 +82,12 @@ size = Vector2(63, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6444e"]
 size = Vector2(15, 15)
 
+[sub_resource type="Curve2D" id="Curve2D_evi0p"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -22, -83, 0, 0, 0, 0, 26, -3)
+}
+point_count = 2
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_evi0p"]
 size = Vector2(32, 144)
 
@@ -95,7 +101,7 @@ tile_set = SubResource("TileSet_xfk5q")
 position = Vector2(16, -16)
 scale = Vector2(-1, 1)
 entry = true
-level_on_entry = "level1"
+level_on_entry = "mainmenu"
 
 [node name="Spawn" parent="Entry" index="0"]
 position = Vector2(4, 0)
@@ -119,25 +125,27 @@ position = Vector2(-2.5, 1.5)
 shape = SubResource("RectangleShape2D_6444e")
 
 [node name="Player" parent="." instance=ExtResource("4_7p6j4")]
-position = Vector2(64, -32)
+position = Vector2(64, -16)
 disable_mode = 1
 floor_max_angle = 0.890118
 floor_snap_length = 20.0
 
 [node name="Path2D" parent="." instance=ExtResource("5_6444e")]
 position = Vector2(262, -77)
-speed = 1.8
+curve = SubResource("Curve2D_evi0p")
+speed = 1.0
+speed_scale = 1.8
 
 [node name="PathFollow2D" parent="Path2D" index="0"]
-position = Vector2(-22, -75)
+position = Vector2(26, -3.00001)
 progress = 93.2952
 
 [node name="AnimatableBody2D" parent="Path2D" index="1"]
-position = Vector2(-22, -75)
+position = Vector2(26, -3.00002)
 
 [node name="Exit" parent="." instance=ExtResource("2_xfk5q")]
 position = Vector2(432, -176)
-level_on_entry = "level3"
+level_on_entry = "level2"
 
 [node name="KillingZone3" parent="." instance=ExtResource("3_7p6j4")]
 

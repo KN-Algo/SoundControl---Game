@@ -1,0 +1,138 @@
+[gd_scene load_steps=11 format=4 uid="uid://buat7n5y3wbfu"]
+
+[ext_resource type="Texture2D" uid="uid://dbpcr2o5cnipg" path="res://assets/Map_assets1.png" id="1_v3rpw"]
+[ext_resource type="PackedScene" uid="uid://dkyqtr7vapeok" path="res://Scenes/Pipe.tscn" id="2_smnlx"]
+[ext_resource type="PackedScene" uid="uid://dep84ljo21h76" path="res://Scenes/player.tscn" id="3_12fag"]
+[ext_resource type="PackedScene" uid="uid://dewk7qr2x1iiy" path="res://Scenes/killing_zone.tscn" id="4_1q6tm"]
+[ext_resource type="PackedScene" uid="uid://cxa53314dxov" path="res://Scenes/moving_platforms.tscn" id="5_v36qu"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v3rpw"]
+texture = ExtResource("1_v3rpw")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 0, 16, 0, 16, 16, -16, 16)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 0, 16, 0, 16, 16, -16, 16)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 0, 16, 0, 16, 16, -16, 16)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 0, 16, 0, 16, 16, -16, 16)
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 0, 16, 0, 16, 16, -16, 16)
+6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 0, -16, 0)
+7:0/0 = 0
+7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 0, -16, 0)
+8:0/0 = 0
+8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 0, -16, 0)
+0:1/0 = 0
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:1/0 = 0
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 0, 16, 0, 16, 16, -16, 16)
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 0, 16, 0, 16, 16, -16, 16)
+5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+6:1/0 = 0
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+7:1/0 = 0
+7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:2/0 = 0
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+4:3/0 = 0
+4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:4/0 = 0
+1:4/0 = 0
+1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:4/0 = 0
+2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+3:4/0 = 0
+3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+4:4/0 = 0
+4:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:5/0 = 0
+2:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+3:5/0 = 0
+3:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+4:5/0 = 0
+4:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSet" id="TileSet_12fag"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_v3rpw")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v36qu"]
+size = Vector2(400, 20)
+
+[sub_resource type="Curve2D" id="Curve2D_v36qu"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 8, -104, 0, 0, 0, 0, 8, 16)
+}
+point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cggpd"]
+size = Vector2(26, 58)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+top_level = true
+visibility_layer = 3
+z_index = 1
+tile_map_data = PackedByteArray("AAD//wAAAQAHAAEAAAAAAAAAAQAHAAEAAAD/////AQABAAQAAAD///7/AQABAAMAAAD///3/AQABAAMAAAD///z/AQABAAMAAAABAAAAAQAHAAEAAAACAAAAAQAHAAEAAAADAAAAAQAHAAEAAAAEAAAAAQAHAAEAAAAFAAAAAQAHAAEAAAAHAP//AQAIAAAAAAAIAP//AQAGAAAAAAAEAP7/AQADAAAAAAAHAP3/AQAIAAAAAAAEAPr/AQAEAAQAAAADAPr/AQADAAQAAAACAPr/AQADAAQAAAABAPr/AQADAAQAAAAAAPr/AQADAAQAAAD///v/AQABAAMAAAD///r/AQABAAMAAAD///n/AQABAAMAAAD///j/AQABAAMAAAD///f/AQABAAMAAAAEAPj/AQAHAAEAAAADAPj/AQAHAAEAAAACAPj/AQAHAAEAAAABAPj/AQAHAAEAAAAAAPj/AQAHAAEAAAAEAPn/AQAEAAMAAAADAPn/AQADAAMAAAACAPn/AQADAAMAAAABAPn/AQADAAMAAAAAAPn/AQADAAMAAAAEAPv/AQAEAAUAAAADAPv/AQADAAUAAAACAPv/AQADAAUAAAABAPv/AQADAAUAAAAAAPv/AQADAAUAAAAIAP3/AQAGAAAAAAAKAAEAAQABAAMAAAAKAAAAAQABAAMAAAAKAP//AQABAAMAAAAKAP7/AQABAAMAAAAKAP3/AQABAAMAAAAKAPz/AQABAAMAAAAKAPv/AQABAAMAAAAKAPr/AQABAAMAAAAKAPn/AQABAAMAAAAKAPj/AQABAAMAAAAKAPf/AQABAAMAAAAKAPb/AQABAAIAAAD///b/AQABAAIAAAAAAPb/AQAGAAAAAAABAPb/AQAIAAAAAAACAPb/AQAGAAAAAAADAPb/AQAGAAAAAAAEAPb/AQAIAAAAAAAFAPb/AQAGAAAAAAAGAPb/AQAGAAAAAAAHAPb/AQAIAAAAAAAIAPb/AQAGAAAAAAAJAPb/AQAGAAAAAAA=")
+tile_set = SubResource("TileSet_12fag")
+rendering_quadrant_size = 32
+
+[node name="Pipe" parent="." instance=ExtResource("2_smnlx")]
+position = Vector2(16, -16)
+scale = Vector2(-1, 1)
+entry = true
+level_on_entry = "level1"
+
+[node name="Player" parent="." instance=ExtResource("3_12fag")]
+position = Vector2(48, -24)
+
+[node name="KillingZone" parent="." instance=ExtResource("4_1q6tm")]
+
+[node name="CollisionShape2D" parent="KillingZone/Area2D" index="0"]
+position = Vector2(352, 48)
+shape = SubResource("RectangleShape2D_v36qu")
+
+[node name="Path2D" parent="." instance=ExtResource("5_v36qu")]
+position = Vector2(176, -144)
+curve = SubResource("Curve2D_v36qu")
+speed_scale = 1.3
+
+[node name="PathFollow2D" parent="Path2D" index="0"]
+position = Vector2(8, -95.7098)
+
+[node name="AnimatableBody2D" parent="Path2D" index="1"]
+position = Vector2(8, -95.7098)
+
+[node name="KillingZone2" parent="." instance=ExtResource("4_1q6tm")]
+
+[node name="Area2D" parent="KillingZone2" index="0"]
+position = Vector2(296, -128)
+
+[node name="CollisionShape2D" parent="KillingZone2/Area2D" index="0"]
+position = Vector2(-3, 19)
+shape = SubResource("RectangleShape2D_cggpd")
+
+[editable path="KillingZone"]
+[editable path="Path2D"]
+[editable path="KillingZone2"]
