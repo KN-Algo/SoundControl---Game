@@ -133,7 +133,7 @@ position = Vector2(-22, -75)
 progress = 93.2952
 
 [node name="AnimatableBody2D" parent="Path2D" index="1"]
-position = Vector2(3.54712, -32.4214)
+position = Vector2(-22, -75)
 
 [node name="Exit" parent="." instance=ExtResource("2_xfk5q")]
 position = Vector2(432, -176)
