@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=4 uid="uid://buat7n5y3wbfu"]
 
-[ext_resource type="Texture2D" uid="uid://dbpcr2o5cnipg" path="res://assets/Map_assets1.png" id="1_v3rpw"]
+[ext_resource type="Texture2D" uid="uid://dbpcr2o5cnipg" path="res://Assets/Map_assets1.png" id="1_v3rpw"]
 [ext_resource type="PackedScene" uid="uid://dkyqtr7vapeok" path="res://Scenes/Pipe.tscn" id="2_smnlx"]
 [ext_resource type="PackedScene" uid="uid://dep84ljo21h76" path="res://Scenes/player.tscn" id="3_12fag"]
 [ext_resource type="PackedScene" uid="uid://dewk7qr2x1iiy" path="res://Scenes/killing_zone.tscn" id="4_1q6tm"]
@@ -119,7 +119,8 @@ curve = SubResource("Curve2D_v36qu")
 speed_scale = 1.3
 
 [node name="PathFollow2D" parent="Path2D" index="0"]
-position = Vector2(8, -95.7098)
+position = Vector2(8, 16)
+progress = 120.0
 
 [node name="AnimatableBody2D" parent="Path2D" index="1"]
 position = Vector2(8, -95.7098)
