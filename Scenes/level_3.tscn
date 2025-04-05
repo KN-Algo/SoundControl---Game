@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=4 uid="uid://wqx077s2cmuy"]
+
+[ext_resource type="TileSet" uid="uid://cf6c7vqg10ufp" path="res://Assets/tile_set.tres" id="1_g5cw1"]
+[ext_resource type="PackedScene" uid="uid://dkyqtr7vapeok" path="res://Scenes/Pipe.tscn" id="2_76ybr"]
+[ext_resource type="PackedScene" uid="uid://dep84ljo21h76" path="res://Scenes/player.tscn" id="3_76ybr"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD//wAAAQADAAMAAAAAAAAAAQADAAQAAAAAAP//AQACAAQAAAAAAP7/AQACAAQAAAAAAP3/AQACAAQAAAD+/wAAAQADAAMAAAD9/wAAAQADAAMAAAD8/wAAAQADAAMAAAD8/wEAAQADAAQAAAD8/wIAAQADAAQAAAD9/wIAAQADAAQAAAD9/wEAAQADAAQAAAD+/wEAAQADAAQAAAD//wEAAQADAAQAAAD//wIAAQADAAQAAAD+/wIAAQADAAQAAAAAAAIAAQADAAQAAAAAAAEAAQADAAQAAAABAAIAAQADAAQAAAABAAEAAQADAAQAAAABAAAAAQADAAQAAAABAP//AQADAAQAAAABAP7/AQADAAQAAAABAP3/AQADAAQAAAA=")
+tile_set = ExtResource("1_g5cw1")
+
+[node name="Pipe" parent="." instance=ExtResource("2_76ybr")]
+position = Vector2(-16, -16)
+entry = true
+level_on_entry = "level2"
+
+[node name="Player" parent="." instance=ExtResource("3_76ybr")]
+position = Vector2(-48, -16)

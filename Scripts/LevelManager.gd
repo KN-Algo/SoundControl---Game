@@ -4,7 +4,8 @@ var is_changing=false
 var level_dict={"mainmenu":"res://Scenes/main_menu.tscn",
 				"level0":"res://Scenes/world.tscn",
 				"level1":"res://Scenes/level_1.tscn",
-				"level2":"res://Scenes/level_2.tscn"}
+				"level2":"res://Scenes/level_2.tscn",
+				"level3":"res://Scenes/level_3.tscn"}
 var current_level="mainmenu"
 var entry=false
 func change_level(level_name):
