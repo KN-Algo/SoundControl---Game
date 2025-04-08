@@ -1,19 +1,99 @@
-[gd_scene load_steps=4 format=4 uid="uid://wqx077s2cmuy"]
+[gd_scene load_steps=13 format=4 uid="uid://wqx077s2cmuy"]
 
 [ext_resource type="TileSet" uid="uid://cf6c7vqg10ufp" path="res://Assets/tile_set.tres" id="1_g5cw1"]
 [ext_resource type="PackedScene" uid="uid://dkyqtr7vapeok" path="res://Scenes/Pipe.tscn" id="2_76ybr"]
 [ext_resource type="PackedScene" uid="uid://dep84ljo21h76" path="res://Scenes/player.tscn" id="3_76ybr"]
+[ext_resource type="PackedScene" uid="uid://cxa53314dxov" path="res://Scenes/moving_platforms.tscn" id="4_s8nj6"]
+[ext_resource type="PackedScene" uid="uid://dewk7qr2x1iiy" path="res://Scenes/killing_zone.tscn" id="5_vwg62"]
+[ext_resource type="PackedScene" uid="uid://bjh2blgh5h25p" path="res://Scenes/coin.tscn" id="6_qf6rc"]
+
+[sub_resource type="Curve2D" id="Curve2D_vwg62"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -120, -48, 0, 0, 0, 0, -56, 0, 0, 0, 0, 0, 40, 0)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_s8nj6"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 16, 32, 0, 0, 0, 0, 16, -88)
+}
+point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qf6rc"]
+size = Vector2(65, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_53xsp"]
+size = Vector2(58.5, 125)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5e78q"]
+size = Vector2(20, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l4wr6"]
+size = Vector2(290, 20)
 
 [node name="Node2D" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAD//wAAAQADAAMAAAAAAAAAAQADAAQAAAAAAP//AQACAAQAAAAAAP7/AQACAAQAAAAAAP3/AQACAAQAAAD+/wAAAQADAAMAAAD9/wAAAQADAAMAAAD8/wAAAQADAAMAAAD8/wEAAQADAAQAAAD8/wIAAQADAAQAAAD9/wIAAQADAAQAAAD9/wEAAQADAAQAAAD+/wEAAQADAAQAAAD//wEAAQADAAQAAAD//wIAAQADAAQAAAD+/wIAAQADAAQAAAAAAAIAAQADAAQAAAAAAAEAAQADAAQAAAABAAIAAQADAAQAAAABAAEAAQADAAQAAAABAAAAAQADAAQAAAABAP//AQADAAQAAAABAP7/AQADAAQAAAABAP3/AQADAAQAAAA=")
+tile_map_data = PackedByteArray("AAD//wAAAQADAAMAAAAAAAAAAQADAAQAAAAAAP//AQACAAQAAAAAAP7/AQACAAQAAAAAAP3/AQACAAQAAAD+/wAAAQADAAMAAAD9/wAAAQADAAMAAAD8/wAAAQADAAMAAAD8/wEAAQADAAQAAAD8/wIAAQADAAQAAAD9/wIAAQADAAQAAAD9/wEAAQADAAQAAAD+/wEAAQADAAQAAAD//wEAAQADAAQAAAD//wIAAQADAAQAAAD+/wIAAQADAAQAAAAAAAIAAQADAAQAAAAAAAEAAQADAAQAAAABAAIAAQADAAQAAAABAAEAAQADAAQAAAABAAAAAQADAAQAAAABAP//AQADAAQAAAABAP7/AQADAAQAAAABAP3/AQADAAQAAAD7/wAAAQADAAMAAAD6/wAAAQADAAMAAAD5/wAAAQACAAMAAAD5/wEAAQACAAQAAAD5/wIAAQACAAQAAAD5/wMAAQACAAQAAAD6/wEAAQADAAQAAAD7/wEAAQADAAQAAAD7/wIAAQADAAQAAAD7/wMAAQADAAQAAAD6/wIAAQADAAQAAAD6/wMAAQADAAQAAAD8/wMAAQADAAQAAAD9/wMAAQADAAQAAAD+/wMAAQADAAQAAAD//wMAAQADAAQAAAAAAAMAAQADAAQAAAABAAMAAQADAAQAAAACAAMAAQADAAQAAAACAAIAAQADAAQAAAACAAEAAQADAAQAAAACAAAAAQADAAQAAAACAP//AQADAAQAAAACAP7/AQADAAQAAAACAP3/AQADAAQAAAADAP3/AQADAAQAAAADAP7/AQADAAQAAAADAP//AQADAAQAAAADAAAAAQADAAQAAAADAAEAAQADAAQAAAADAAIAAQADAAQAAAADAAMAAQADAAQAAADy//r/AQAEAAAAAAD0//n/AQADAAAAAAD1//n/AQAEAAAAAAD2//n/AQAHAAEAAAD0//f/AQACAAIAAAD1//f/AQAEAAIAAAD0//b/AQADAAIAAADz//b/AQAEAAIAAAD1//b/AQAHAAEAAAD2//b/AQAHAAEAAAD2//f/AQAGAAAAAAD3//b/AQAHAAEAAAD4//b/AQAHAAEAAAD3//f/AQAIAAAAAAD4//f/AQAIAAAAAADv////AQAEAAMAAADv/wAAAQAEAAQAAADv/wEAAQAEAAQAAADv/wIAAQAEAAQAAADv/wMAAQAEAAQAAADv/wQAAQAEAAQAAAD5/wQAAQAEAAQAAADu/wQAAQADAAQAAADu/wMAAQADAAQAAADu/wIAAQADAAQAAADu/wEAAQADAAQAAADu/wAAAQADAAQAAADt/wAAAQADAAQAAADs/wAAAQADAAQAAADt/wEAAQADAAQAAADt/wIAAQADAAQAAADt/wMAAQADAAQAAADt/wQAAQADAAQAAADs/wQAAQADAAQAAADs/wMAAQADAAQAAADs/wIAAQADAAQAAADs/wEAAQADAAQAAADr/wEAAQADAAQAAADr/wAAAQADAAQAAADr/wIAAQADAAQAAADr/wMAAQADAAQAAADr/wQAAQADAAQAAADu////AQADAAMAAADt////AQADAAMAAADs////AQADAAMAAADr////AQADAAMAAADq////AQAHAAEAAADq//7/AQABAAQAAADq//3/AQABAAMAAADq//z/AQABAAMAAADq//v/AQABAAMAAADq//r/AQABAAMAAADq//n/AQABAAMAAADq//j/AQABAAMAAADq//f/AQABAAMAAADq//b/AQABAAIAAAD0//X/AQAFAAAAAAD1//X/AQAFAAAAAAD2//X/AQAFAAAAAAD3//X/AQAFAAAAAAD4//X/AQAFAAAAAADz//X/AQAFAAAAAADy//X/AQAFAAAAAADx//X/AQAFAAAAAADw//X/AQAFAAAAAADv//X/AQAFAAAAAADu//X/AQAFAAAAAADt//X/AQAFAAAAAADs//X/AQAFAAAAAADr//X/AQAFAAAAAADq//X/AQAFAAAAAADv//v/AQADAAIAAADv//z/AQAEAAIAAADv//3/AQADAAIAAADt//3/AQADAAIAAADt//z/AQADAAIAAADt//v/AQACAAIAAADs//7/AQABAAEAAADr//7/AQACAAEAAADs//3/AQACAAIAAADs//z/AQAEAAIAAADr//3/AQACAAIAAADt//r/AQAEAAIAAADt//n/AQAHAAEAAADt//j/AQABAAQAAADt//f/AQABAAMAAADt//b/AQABAAIAAADr//z/AQABAAQAAADr//v/AQABAAMAAADs//v/AQABAAQAAADs//r/AQABAAMAAADs//n/AQABAAMAAADr//n/AQABAAMAAADr//r/AQABAAMAAADr//j/AQABAAMAAADs//j/AQABAAMAAADs//f/AQABAAIAAADr//f/AQABAAIAAADr//b/AQAHAAEAAADs//b/AQAHAAEAAAAAAPz/AQACAAMAAAABAPz/AQADAAMAAAACAPz/AQADAAMAAAADAPz/AQADAAMAAAAAAPv/AQAHAAEAAAAAAPr/AQAHAAEAAAAAAPn/AQAHAAEAAAD///n/AQAHAAEAAAD+//n/AQAHAAEAAAD9//n/AQAHAAEAAAD8//n/AQAHAAEAAAD7//n/AQAHAAEAAAD6//n/AQAHAAEAAAD5//n/AQAHAAEAAAD4//n/AQAHAAEAAAD3//n/AQAHAAEAAAD5//b/AQAHAAEAAAD6//b/AQAHAAEAAAD7//b/AQAHAAEAAAD8//b/AQAHAAEAAAD9//b/AQAHAAEAAAD5//X/AQAFAAAAAAD6//X/AQAFAAAAAAD7//X/AQAFAAAAAAD8//X/AQAFAAAAAAD9//X/AQAFAAAAAAD9//f/AQAHAAEAAAD9//j/AQAHAAEAAAA=")
 tile_set = ExtResource("1_g5cw1")
 
-[node name="Pipe" parent="." instance=ExtResource("2_76ybr")]
+[node name="Entry" parent="." instance=ExtResource("2_76ybr")]
 position = Vector2(-16, -16)
 entry = true
 level_on_entry = "level2"
 
+[node name="Exit" parent="." instance=ExtResource("2_76ybr")]
+position = Vector2(-112, -240)
+
 [node name="Player" parent="." instance=ExtResource("3_76ybr")]
 position = Vector2(-48, -16)
+
+[node name="Path2D" parent="." instance=ExtResource("4_s8nj6")]
+position = Vector2(-296, 8)
+curve = SubResource("Curve2D_vwg62")
+speed_scale = 0.8
+
+[node name="PathFollow2D" parent="Path2D" index="0"]
+position = Vector2(40, 0)
+progress = 176.0
+
+[node name="AnimatableBody2D" parent="Path2D" index="1"]
+position = Vector2(-113.266, -42.9497)
+
+[node name="Path2D2" parent="." instance=ExtResource("4_s8nj6")]
+position = Vector2(-496, -64)
+curve = SubResource("Curve2D_s8nj6")
+speed_scale = 0.8
+
+[node name="Coin" parent="." instance=ExtResource("6_qf6rc")]
+position = Vector2(-560, -112)
+
+[node name="KillingZone" parent="." instance=ExtResource("5_vwg62")]
+
+[node name="CollisionShape2D" parent="KillingZone/Area2D" index="0"]
+position = Vector2(-360, -272)
+shape = SubResource("RectangleShape2D_qf6rc")
+
+[node name="KillingZone2" parent="." instance=ExtResource("5_vwg62")]
+
+[node name="CollisionShape2D" parent="KillingZone2/Area2D" index="0"]
+position = Vector2(-608, -128)
+shape = SubResource("RectangleShape2D_53xsp")
+
+[node name="KillingZone3" parent="." instance=ExtResource("5_vwg62")]
+
+[node name="CollisionShape2D" parent="KillingZone3/Area2D" index="0"]
+position = Vector2(-528, -112)
+shape = SubResource("RectangleShape2D_5e78q")
+
+[node name="KillingZone4" parent="." instance=ExtResource("5_vwg62")]
+
+[node name="CollisionShape2D" parent="KillingZone4/Area2D" index="0"]
+position = Vector2(-369, 40)
+shape = SubResource("RectangleShape2D_l4wr6")
+
+[editable path="Path2D"]
+[editable path="KillingZone"]
+[editable path="KillingZone2"]
+[editable path="KillingZone3"]
+[editable path="KillingZone4"]
