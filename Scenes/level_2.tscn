@@ -70,7 +70,7 @@ position = Vector2(4, 16)
 progress = 128.0
 
 [node name="AnimatableBody2D" parent="Path2D" index="1"]
-position = Vector2(4, 8.01688)
+position = Vector2(4, 16)
 
 [node name="Coin" parent="." instance=ExtResource("6_cggpd")]
 position = Vector2(216, -216)
