@@ -10,3 +10,4 @@ extends Path2D
 func _ready() -> void:
 	animation.play('move')
 	animation.speed_scale = speed_scale
+	

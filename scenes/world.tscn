@@ -1,9 +1,8 @@
-[gd_scene load_steps=12 format=4 uid="uid://dccj8srylfk0h"]
+[gd_scene load_steps=10 format=4 uid="uid://dccj8srylfk0h"]
 
 [ext_resource type="PackedScene" uid="uid://dep84ljo21h76" path="res://Scenes/player.tscn" id="2_feo6n"]
 [ext_resource type="Texture2D" uid="uid://f6eff2nx32hq" path="res://Assets/plums.png" id="3_o5kx0"]
 [ext_resource type="PackedScene" uid="uid://cxa53314dxov" path="res://Scenes/moving_platforms.tscn" id="4_rifsp"]
-[ext_resource type="Script" uid="uid://cxf63bkqipemo" path="res://Scripts/killing_zone.gd" id="5_fo5ed"]
 [ext_resource type="PackedScene" uid="uid://dkyqtr7vapeok" path="res://Scenes/Pipe.tscn" id="5_u262u"]
 [ext_resource type="PackedScene" uid="uid://bjh2blgh5h25p" path="res://Scenes/coin.tscn" id="6_5ukr8"]
 
@@ -268,8 +267,6 @@ _data = {
 }
 point_count = 2
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ukr8"]
-
 [node name="World" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("2_feo6n")]
@@ -298,15 +295,6 @@ position = Vector2(38, 154)
 scale = Vector2(-1, 1)
 entry = true
 level_on_entry = "mainmenu"
-
-[node name="KillZone" type="Area2D" parent="."]
-position = Vector2(370, 49)
-script = ExtResource("5_fo5ed")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
-shape = SubResource("RectangleShape2D_5ukr8")
-
-[connection signal="body_entered" from="KillZone" to="KillZone" method="_on_body_entered"]
 
 [editable path="Exit"]
 [editable path="Entry"]
