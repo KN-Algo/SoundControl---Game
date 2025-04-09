@@ -71,6 +71,7 @@ region_rect = Rect2(255, 42, 34, 12)
 shape = SubResource("RectangleShape2D_8fr8f")
 
 [node name="Area2D" type="Area2D" parent="AnimatableBody2D"]
+position = Vector2(0, -1.82554)
 script = ExtResource("2_yhlqn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D/Area2D"]

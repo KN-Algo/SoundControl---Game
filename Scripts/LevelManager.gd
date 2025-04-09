@@ -1,13 +1,17 @@
 extends Node
-var can_change=true
+var can_change=false
 var is_changing=false
 var level_dict={"mainmenu":"res://Scenes/main_menu.tscn",
 				"level0":"res://Scenes/world.tscn",
 				"level1":"res://Scenes/level_1.tscn",
 				"level2":"res://Scenes/level_2.tscn",
-				"level3":"res://Scenes/level_3.tscn"}
+				"level3":"res://Scenes/level_3.tscn",
+				"endscreen":"res://Scenes/end_screen.tscn"}
 var current_level="mainmenu"
 var entry=false
+func _ready():
+	await get_tree().create_timer(0.1).timeout
+	can_change=true
 func change_level(level_name):
 	is_changing=true
 	can_change=false
@@ -20,10 +24,11 @@ func change_level(level_name):
 		await SceneTransition.faded_out
 		is_changing=false
 		current_level=level_name
-
+		can_change=true
 	else:
 		print("level not found")
-	can_change=true
+		can_change=true
+		
 
 func restart():
 	change_level(current_level)

@@ -19,7 +19,6 @@ config/icon="res://Assets/sp_player.png"
 
 LevelManager="*res://Scripts/LevelManager.gd"
 SceneTransition="*res://Scripts/SceneTransition.tscn"
-Metronom="*res://metronom.tscn"
 
 [display]
 

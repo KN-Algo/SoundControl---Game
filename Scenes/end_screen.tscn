@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://dvysgd61npavl"]
+
+[ext_resource type="Texture2D" uid="uid://c53n54kx5jred" path="res://Assets/8673fad6-62bf-4416-804b-65f793599224.jpg" id="2_fi2y0"]
+[ext_resource type="FontFile" uid="uid://1yojaetmvbqq" path="res://Fonts/Geosteam-eJap.ttf" id="4_4suit"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3iuwm"]
+texture = ExtResource("2_fi2y0")
+modulate_color = Color(0.529067, 0.529067, 0.529067, 1)
+
+[node name="EndScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_3iuwm")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -515.0
+offset_top = 219.0
+offset_right = 617.0
+offset_bottom = 478.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_4suit")
+theme_override_font_sizes/font_size = 128
+text = "CONGRATULATIONEZ
+"
+horizontal_alignment = 1

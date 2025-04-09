@@ -1,12 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://dewk7qr2x1iiy"]
+[gd_scene load_steps=4 format=3 uid="uid://dewk7qr2x1iiy"]
 
 [ext_resource type="Script" uid="uid://cxf63bkqipemo" path="res://Scripts/killing_zone.gd" id="1_utbqi"]
+[ext_resource type="Texture2D" uid="uid://dbpcr2o5cnipg" path="res://Assets/Map_assets1.png" id="2_7dj44"]
 
-[node name="KillingZone" type="Node"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_e2gh5"]
+radius = 16.0
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D"]
 script = ExtResource("1_utbqi")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_e2gh5")
 
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_7dj44")
+region_enabled = true
+region_rect = Rect2(96, 64, 32, 32)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

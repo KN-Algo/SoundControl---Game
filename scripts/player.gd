@@ -9,9 +9,9 @@ const JUMP_VELOCITY = -350.0
 var x_velocity=1
 var can_control_direction=false
 var direction=0
+var coyote_jump=0.2
 @onready var sprite_2d: Sprite2D = $Sprite2D
 func _ready():
-
 	print(LevelManager.entry)
 	print("start")
 	var pipes=get_tree().get_nodes_in_group("pipe")
@@ -33,8 +33,11 @@ func _physics_process(delta: float) -> void:
 		return
 	if not is_on_floor():
 		velocity += get_gravity() * delta * 1.2
-
-	if Input.is_action_just_pressed("Jump") and is_on_floor():
+	coyote_jump+=delta
+	if is_on_floor():
+		coyote_jump=0.0
+	if Input.is_action_just_pressed("Jump") and coyote_jump<0.1:
+		coyote_jump=0.1
 		spawn_steam(x_velocity/2.0)
 		velocity.y = JUMP_VELOCITY
 	if can_control_direction:
