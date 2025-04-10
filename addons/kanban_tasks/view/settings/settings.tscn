@@ -7,6 +7,7 @@
 
 [node name="Settings" type="AcceptDialog"]
 title = "Settings"
+position = Vector2i(0, 36)
 size = Vector2i(800, 414)
 visible = true
 theme_type_variation = &"EditorSettingsDialog"
@@ -19,8 +20,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 8.0
 offset_top = 8.0
-offset_right = 792.0
-offset_bottom = 308.0
+offset_right = -8.0
+offset_bottom = -106.0
 grow_horizontal = 2
 grow_vertical = 2
 current_tab = 0

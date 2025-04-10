@@ -9,7 +9,6 @@ func _ready() -> void:
 
 func _on_play_pressed() -> void:
 	LevelManager.entry=false
-	Global.coins=0
 	Global.curent_coins=0
 	LevelManager.change_level(LevelManager.last_level)
 
