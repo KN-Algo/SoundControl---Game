@@ -9,6 +9,7 @@ var level_dict={"mainmenu":"res://Scenes/main_menu.tscn",
 				"endscreen":"res://Scenes/end_screen.tscn",
 				"settings":"res://Scenes/settings.tscn"}
 var current_level="mainmenu"
+var last_level="level1"
 var entry=false
 func _ready():
 	await get_tree().create_timer(0.1).timeout
@@ -24,6 +25,10 @@ func change_level(level_name):
 		SceneTransition.fade_out()
 		await SceneTransition.faded_out
 		is_changing=false
+		if level_name != "settings" and current_level != "settings":
+			last_level = current_level
+		if last_level == "endscreen":
+			last_level = "level1"
 		current_level=level_name
 		can_change=true
 	else:

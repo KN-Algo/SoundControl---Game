@@ -32,6 +32,7 @@ func _ready():
 func _process(delta):
 	if Input.is_action_just_pressed("Esc"):
 		LevelManager.change_level("mainmenu")
+		
 func _physics_process(delta: float) -> void:
 	if LevelManager.is_changing:
 		return

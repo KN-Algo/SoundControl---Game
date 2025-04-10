@@ -6,6 +6,7 @@ extends Area2D
 @onready var collision_shape_2d = $Block/CollisionShape2D
 @onready var marker_2d = $Block/Marker2D
 
+@warning_ignore("unused_parameter")
 func _on_body_entered(body):
 	if 	LevelManager.can_change:
 		LevelManager.entry=entry
