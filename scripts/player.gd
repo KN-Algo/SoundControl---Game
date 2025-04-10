@@ -12,6 +12,7 @@ var direction=0
 var coyote_jump=0.2
 @onready var sprite_2d: Sprite2D = $Sprite2D
 func _ready():
+	Global.curent_coins=0
 	print(LevelManager.entry)
 	print("start")
 	var pipes=get_tree().get_nodes_in_group("pipe")
@@ -19,15 +20,18 @@ func _ready():
 		if pipe.entry and !LevelManager.entry:
 			global_position=pipe.global_position
 			x_velocity=1
+			pipe.call_deferred("close")
 		elif !pipe.entry and LevelManager.entry:
 			global_position=pipe.global_position
 			x_velocity=-1
 	camera_2d.reset_smoothing()
 
-	await get_tree().create_timer(0.3).timeout
+	await get_tree().create_timer(0.5).timeout
 	can_control_direction=true
 
-
+func _process(delta):
+	if Input.is_action_just_pressed("Esc"):
+		LevelManager.change_level("mainmenu")
 func _physics_process(delta: float) -> void:
 	if LevelManager.is_changing:
 		return

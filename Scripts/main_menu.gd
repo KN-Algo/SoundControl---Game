@@ -9,6 +9,8 @@ func _ready() -> void:
 
 func _on_play_pressed() -> void:
 	LevelManager.entry=false
+	Global.coins=0
+	Global.curent_coins=0
 	LevelManager.change_level("level1")
 
 func _on_exit_pressed() -> void:
@@ -16,5 +18,6 @@ func _on_exit_pressed() -> void:
 
 
 func _on_settings_pressed():
-	get_tree().change_scene_to_file("res://Scenes/settings.tscn")
+	LevelManager.change_level("settings")
+	
 	print("MENU")

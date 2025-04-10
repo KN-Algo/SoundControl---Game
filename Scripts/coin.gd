@@ -7,6 +7,7 @@ func _on_body_entered(body: Node2D) -> void:
 	if picked:
 		return
 	if body.is_in_group("player"):
+		Global.curent_coins+=1
 		picked=true
 		pickup_sound.play()
 		var tween=get_tree().create_tween()
@@ -15,6 +16,7 @@ func _on_body_entered(body: Node2D) -> void:
 		tween.tween_property(animated_sprite_2d,"modulate",Color(1,1,1,0),0.2)
 		await tween.finished
 		queue_free()
+		
 		
 		
 	

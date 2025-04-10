@@ -34,6 +34,8 @@ func _unhandled_input(event):
 				return
 			print(event.as_text())
 			InputMap.action_add_event(action,event)
+			if InputMap.action_get_events(action).size()>3:
+				InputMap.action_erase_event(action,InputMap.action_get_events(action)[0])
 			is_listening=false
 	update_ui()
 		

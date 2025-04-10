@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dkyqtr7vapeok"]
+[gd_scene load_steps=8 format=3 uid="uid://dkyqtr7vapeok"]
 
 [ext_resource type="Script" uid="uid://cyow8cd4kkg37" path="res://Scenes/pipe.gd" id="1_nq301"]
 [ext_resource type="Texture2D" uid="uid://bohq2oqldyowk" path="res://Assets/rura_drzwi.png" id="2_t5chl"]
@@ -14,6 +14,9 @@ size = Vector2(27, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t5chl"]
 size = Vector2(1, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yp7jp"]
+size = Vector2(21, 29)
 
 [node name="Pipe" type="Area2D" groups=["pipe"]]
 script = ExtResource("1_nq301")
@@ -41,5 +44,21 @@ shape = SubResource("RectangleShape2D_nq301")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(15.5, 1.5)
 shape = SubResource("RectangleShape2D_t5chl")
+
+[node name="Block" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Block"]
+position = Vector2(-0.5, 1.5)
+shape = SubResource("RectangleShape2D_yp7jp")
+disabled = true
+
+[node name="Marker2D" type="Marker2D" parent="Block"]
+position = Vector2(-7.5, -16)
+
+[node name="Sprite2D" type="Sprite2D" parent="Block/Marker2D"]
+position = Vector2(0, -16)
+texture = ExtResource("2_t5chl")
+region_enabled = true
+region_rect = Rect2(5, 0, 7, 32)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=4 uid="uid://buat7n5y3wbfu"]
+[gd_scene load_steps=7 format=4 uid="uid://buat7n5y3wbfu"]
 
 [ext_resource type="PackedScene" uid="uid://dkyqtr7vapeok" path="res://Scenes/Pipe.tscn" id="2_smnlx"]
 [ext_resource type="TileSet" uid="uid://co8hhxgbap016" path="res://tilemap.tres" id="2_v36qu"]
 [ext_resource type="PackedScene" uid="uid://dep84ljo21h76" path="res://Scenes/player.tscn" id="3_12fag"]
+[ext_resource type="Texture2D" uid="uid://pwn30414koib" path="res://Assets/91a6baf0-23a8-4b2f-b3da-0007d9853e47.png" id="5_cggpd"]
 [ext_resource type="PackedScene" uid="uid://cxa53314dxov" path="res://Scenes/moving_platforms.tscn" id="5_v36qu"]
 
 [sub_resource type="Curve2D" id="Curve2D_v36qu"]
@@ -47,5 +48,16 @@ progress = 0.0
 
 [node name="AnimatableBody2D" parent="Path2D" index="1"]
 position = Vector2(4, -112)
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+modulate = Color(0.509286, 0.509286, 0.509286, 1)
+scale = Vector2(0.2, 0.2)
+scroll_scale = Vector2(0.5, 0.5)
+repeat_size = Vector2(1024, 1024)
+repeat_times = 100
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+z_index = -150
+texture = ExtResource("5_cggpd")
 
 [editable path="Path2D"]

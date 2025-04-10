@@ -1,13 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bqwr6u3etofng"]
+[gd_scene load_steps=6 format=3 uid="uid://bqwr6u3etofng"]
 
 [ext_resource type="Script" uid="uid://bcl2hdbyrvn51" path="res://Scenes/settings.gd" id="1_lhmql"]
-[ext_resource type="Texture2D" uid="uid://c53n54kx5jred" path="res://Assets/8673fad6-62bf-4416-804b-65f793599224.jpg" id="2_6kysc"]
+[ext_resource type="Texture2D" uid="uid://bc8kc4875onow" path="res://Assets/1ad562f7-c620-488b-bf93-7f51e93183f8.png" id="2_aaqfp"]
 [ext_resource type="Script" uid="uid://bs80gain66x2c" path="res://Scenes/keybindui.gd" id="4_aaqfp"]
 [ext_resource type="FontFile" uid="uid://1yojaetmvbqq" path="res://Fonts/Geosteam-eJap.ttf" id="4_f60ng"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3iuwm"]
-texture = ExtResource("2_6kysc")
-modulate_color = Color(0.529067, 0.529067, 0.529067, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lhmql"]
 bg_color = Color(1, 1, 1, 0.211765)
@@ -20,6 +16,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_lhmql")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -840.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_aaqfp")
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 1
@@ -36,16 +42,6 @@ theme_override_font_sizes/font_size = 128
 text = "STEAMPHONY
 "
 horizontal_alignment = 1
-
-[node name="Panel" type="Panel" parent="."]
-z_index = -10
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_3iuwm")
 
 [node name="Back" type="Button" parent="."]
 custom_minimum_size = Vector2(200, 100)

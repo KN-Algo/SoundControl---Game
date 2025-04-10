@@ -15,14 +15,16 @@
 		{
 			"uuid": "dabe1952-6805-41bf-bf31-0344de42dbae",
 			"title": "Doing",
-			"tasks": [
-				"779c4551-2d5f-4be2-bc36-ed8806fb16f8"
-			]
+			"tasks": []
 		},
 		{
 			"uuid": "4bec28bd-2fe3-4118-a65b-6030c1a395dd",
 			"title": "Done",
 			"tasks": [
+				"2001f3bd-779c-467c-98a1-c5585a0f200d",
+				"779c4551-2d5f-4be2-bc36-ed8806fb16f8",
+				"955e0bac-7824-41bd-85e5-76d8824625cc",
+				"551f20f3-e29f-4d56-b970-c9fbf9acc0c1",
 				"bd3d2560-a9bc-4749-8877-5f13bc6f986d",
 				"37659ef6-cca5-49d7-80f9-aa7dc605136b",
 				"a73f38b3-95cf-4a23-864a-9f6015071f9d",
@@ -69,6 +71,27 @@
 		{
 			"uuid": "779c4551-2d5f-4be2-bc36-ed8806fb16f8",
 			"title": "end screen",
+			"description": "",
+			"category": "0594825f-ca27-4d7e-bcee-644e440de6aa",
+			"steps": []
+		},
+		{
+			"uuid": "551f20f3-e29f-4d56-b970-c9fbf9acc0c1",
+			"title": "podmienic grafiki",
+			"description": "",
+			"category": "0594825f-ca27-4d7e-bcee-644e440de6aa",
+			"steps": []
+		},
+		{
+			"uuid": "955e0bac-7824-41bd-85e5-76d8824625cc",
+			"title": "coin counter",
+			"description": "",
+			"category": "0594825f-ca27-4d7e-bcee-644e440de6aa",
+			"steps": []
+		},
+		{
+			"uuid": "2001f3bd-779c-467c-98a1-c5585a0f200d",
+			"title": "control binding queue",
 			"description": "",
 			"category": "0594825f-ca27-4d7e-bcee-644e440de6aa",
 			"steps": []

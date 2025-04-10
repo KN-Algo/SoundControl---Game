@@ -6,7 +6,8 @@ var level_dict={"mainmenu":"res://Scenes/main_menu.tscn",
 				"level1":"res://Scenes/level_1.tscn",
 				"level2":"res://Scenes/level_2.tscn",
 				"level3":"res://Scenes/level_3.tscn",
-				"endscreen":"res://Scenes/end_screen.tscn"}
+				"endscreen":"res://Scenes/end_screen.tscn",
+				"settings":"res://Scenes/settings.tscn"}
 var current_level="mainmenu"
 var entry=false
 func _ready():

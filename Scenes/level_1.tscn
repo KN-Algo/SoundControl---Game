@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=4 uid="uid://cwqnbtnasccqq"]
+[gd_scene load_steps=8 format=4 uid="uid://cwqnbtnasccqq"]
 
 [ext_resource type="TileSet" uid="uid://co8hhxgbap016" path="res://tilemap.tres" id="2_6444e"]
 [ext_resource type="PackedScene" uid="uid://dkyqtr7vapeok" path="res://Scenes/Pipe.tscn" id="2_xfk5q"]
 [ext_resource type="PackedScene" uid="uid://dep84ljo21h76" path="res://Scenes/player.tscn" id="4_7p6j4"]
 [ext_resource type="PackedScene" uid="uid://cxa53314dxov" path="res://Scenes/moving_platforms.tscn" id="5_6444e"]
 [ext_resource type="PackedScene" uid="uid://bjh2blgh5h25p" path="res://Scenes/coin.tscn" id="6_evi0p"]
+[ext_resource type="Texture2D" uid="uid://pwn30414koib" path="res://Assets/91a6baf0-23a8-4b2f-b3da-0007d9853e47.png" id="6_lsmp6"]
 
 [sub_resource type="Curve2D" id="Curve2D_evi0p"]
 _data = {
@@ -52,6 +53,17 @@ position = Vector2(26, -3.00002)
 
 [node name="Coin" parent="." instance=ExtResource("6_evi0p")]
 position = Vector2(408, -64)
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+modulate = Color(0.509286, 0.509286, 0.509286, 1)
+scale = Vector2(0.2, 0.2)
+scroll_scale = Vector2(0.5, 0.5)
+repeat_size = Vector2(1024, 1024)
+repeat_times = 100
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+z_index = -150
+texture = ExtResource("6_lsmp6")
 
 [editable path="Entry"]
 [editable path="Path2D"]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=4 uid="uid://wqx077s2cmuy"]
+[gd_scene load_steps=8 format=4 uid="uid://wqx077s2cmuy"]
 
 [ext_resource type="TileSet" uid="uid://co8hhxgbap016" path="res://tilemap.tres" id="1_g5cw1"]
 [ext_resource type="PackedScene" uid="uid://dkyqtr7vapeok" path="res://Scenes/Pipe.tscn" id="2_76ybr"]
 [ext_resource type="PackedScene" uid="uid://dep84ljo21h76" path="res://Scenes/player.tscn" id="3_76ybr"]
 [ext_resource type="PackedScene" uid="uid://cxa53314dxov" path="res://Scenes/moving_platforms.tscn" id="4_s8nj6"]
+[ext_resource type="Texture2D" uid="uid://pwn30414koib" path="res://Assets/91a6baf0-23a8-4b2f-b3da-0007d9853e47.png" id="5_vwg62"]
 
 [sub_resource type="Curve2D" id="Curve2D_vwg62"]
 _data = {
@@ -51,5 +52,16 @@ position = Vector2(40, 0)
 position = Vector2(-496, -64)
 curve = SubResource("Curve2D_s8nj6")
 speed_scale = 0.8
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+modulate = Color(0.509286, 0.509286, 0.509286, 1)
+scale = Vector2(0.2, 0.2)
+scroll_scale = Vector2(0.5, 0.5)
+repeat_size = Vector2(1024, 1024)
+repeat_times = 100
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+z_index = -150
+texture = ExtResource("5_vwg62")
 
 [editable path="Path2D"]
