@@ -62,6 +62,7 @@ repeat_size = Vector2(1024, 1024)
 repeat_times = 100
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+self_modulate = Color(0.6923, 0.929583, 0.652643, 1)
 z_index = -150
 texture = ExtResource("6_lsmp6")
 

@@ -65,7 +65,7 @@ position = Vector2(21.6953, -2.17446)
 [node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
 texture = ExtResource("2_ktvip")
 region_enabled = true
-region_rect = Rect2(255, 42, 34, 12)
+region_rect = Rect2(415, 234, 34, 12)
 
 [node name="Platform_shape" type="CollisionShape2D" parent="AnimatableBody2D"]
 shape = SubResource("RectangleShape2D_8fr8f")
